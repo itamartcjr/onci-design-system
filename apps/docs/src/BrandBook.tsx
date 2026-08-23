@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import './brand-assets.css';
+import LogoGuide from './LogoGuide';
 
 function PageHead({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return <div className="page-head"><div className="eyebrow">{eyebrow}</div><h1>{title}</h1><p>{description}</p></div>;
@@ -112,19 +113,7 @@ export default function BrandBook() {
       </div>
     </Section>
 
-    <Section title="09. Logo e assinatura" note="Assets vetoriais oficiais fornecidos para a ONCI.">
-      <div className="brand-assets">
-        <article className="brand-asset"><div className="brand-asset__preview logo"><img src={asset('logo.svg')} alt="Logo oficial ONCI" /></div><h3>Logo principal</h3><code>brand/logo.svg</code><p>Assinatura completa da ONCI. É a versão prioritária para cabeçalhos, comunicação institucional e aplicações em que existe largura suficiente.</p></article>
-        <article className="brand-asset"><div className="brand-asset__preview symbol"><img src={asset('symbol.svg')} alt="Símbolo oficial ONCI" /></div><h3>Símbolo</h3><code>brand/symbol.svg</code><p>Marca isolada para espaços compactos, ícones de produto e aplicações em que a assinatura completa não é necessária.</p></article>
-        <article className="brand-asset"><div className="brand-asset__preview dark profile"><img src={asset('perfil.svg')} alt="Aplicação de perfil oficial ONCI" /></div><h3>Perfil</h3><code>brand/perfil.svg</code><p>Aplicação quadrada preta com símbolo branco, indicada para avatar, perfil social e superfícies quadradas equivalentes.</p></article>
-      </div>
-      <div className="brand-rule-grid">
-        <div><strong>Preservar o desenho</strong><p>Não redesenhar, esticar, comprimir, inclinar adicionalmente nem alterar as proporções internas dos vetores oficiais.</p></div>
-        <div><strong>Alto contraste</strong><p>Priorizar aplicações em preto e branco. Variações cromáticas só devem ser documentadas quando aprovadas como versões oficiais.</p></div>
-        <div><strong>Sem efeitos gratuitos</strong><p>Não aplicar sombra, contorno, bevel, glow, textura ou deformação como parte da assinatura.</p></div>
-        <div><strong>Ainda por definir</strong><p>Área de proteção, redução mínima, versões cromáticas adicionais e lockups formais de Desempenho, Equipes e Raízes precisam de especificação própria.</p></div>
-      </div>
-    </Section>
+    <LogoGuide asset={asset} />
 
     <Section title="10. Fotografia e direção de arte" note="Movimento real. Produto visível. Contexto verdadeiro.">
       <div className="research-list">
@@ -147,7 +136,7 @@ export default function BrandBook() {
 
     <Section title="15. Governança" note="Marca define intenção; Design System transforma intenção em código.">
       <div className="token-map"><div><code>DEFINIDO</code><span>Decisão consolidada que já pode orientar implementação.</span></div><div><code>PROPOSTA</code><span>Formulação que organiza a estratégia, mas pode ser refinada.</span></div><div><code>PENDENTE</code><span>Depende de validação ou decisão futura.</span></div><div><code>FONTE DE VERDADE</code><span>O conteúdo completo e versionável permanece em docs/brand-book.md.</span></div></div>
-      <div className="do-not-copy" style={{ marginTop: 24 }}><span>Assets oficiais incorporados</span><span>Área de proteção</span><span>Redução mínima</span><span>Versões cromáticas</span><span>Lockups das frentes</span><span>Aprovação final de missão e visão</span></div>
+      <div className="do-not-copy" style={{ marginTop: 24 }}><span>Assets oficiais incorporados</span><span>Clear space operacional</span><span>Redução mínima operacional</span><span>Versões cromáticas futuras</span><span>Lockups das frentes</span><span>Aprovação final de missão e visão</span></div>
     </Section>
   </>;
 }

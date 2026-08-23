@@ -297,31 +297,109 @@ Os vetores oficiais da ONCI estão incorporados ao repositório e são a fonte d
 
 #### Logo principal — `logo.svg`
 
-Assinatura completa da ONCI. É a versão prioritária para cabeçalhos, comunicação institucional e aplicações em que existe largura suficiente.
+Assinatura prioritária da ONCI. Usar em cabeçalhos, comunicação institucional, embalagens, materiais de patrocínio e qualquer aplicação com largura suficiente.
 
 #### Símbolo — `symbol.svg`
 
-Marca isolada para espaços compactos, ícones de produto e aplicações em que a assinatura completa não é necessária.
+Marca isolada para áreas compactas e contextos em que ONCI já está identificada. Não deve substituir indiscriminadamente a assinatura principal.
 
 #### Perfil — `perfil.svg`
 
-Aplicação quadrada preta com símbolo branco, indicada para avatar, perfil social, favicon e superfícies quadradas equivalentes.
+Aplicação quadrada preta com símbolo branco para avatar, perfil social, favicon e superfícies quadradas equivalentes.
 
-### Regras de uso
+### Área de proteção — Proposta operacional v0.2
 
-- usar sempre os vetores oficiais; não redesenhar nem aproximar a marca por tipografia;
-- não distorcer, esticar, comprimir, inclinar adicionalmente ou alterar as proporções internas;
-- não aplicar efeitos, sombras, contornos, bevel, glow ou texturas não previstas;
-- priorizar aplicações de alto contraste;
-- não misturar o logo com grafismos que prejudiquem a leitura;
-- `logo.svg` é a assinatura prioritária; `symbol.svg` entra quando o espaço ou a função pedirem uma marca compacta; `perfil.svg` é a aplicação quadrada oficial.
+Até existir uma construção geométrica final assinada para produção, usar **X = 25% da altura total do ativo** como clear space mínimo em todos os lados.
 
-### Especificações ainda por definir
+- nenhum texto, borda, fotografia, ícone ou outro logo entra em X;
+- no `perfil.svg`, X começa fora do quadrado preto, porque o quadrado faz parte do asset;
+- aumentar o espaço é permitido; reduzir abaixo de X não é recomendado.
 
-- área de proteção;
-- tamanho mínimo / redução mínima;
-- versões cromáticas adicionais além dos vetores oficiais atuais;
-- regras formais de aplicação sobre fotografia;
+### Redução mínima — Proposta operacional v0.2
+
+**Digital:**
+
+- `logo.svg`: 96 px de largura mínima;
+- `symbol.svg`: 24 px de largura mínima;
+- `perfil.svg`: 32 × 32 px mínimo.
+
+**Ponto de partida para material impresso:**
+
+- logo: 25 mm de largura;
+- símbolo: 8 mm de largura;
+- perfil: 10 mm.
+
+Bordado, silk, transfer, etiqueta e impressão devem passar por prova física antes de produção em escala. Se a assinatura perder definição, trocar para símbolo/perfil em vez de reduzir além do limite.
+
+### Cores oficiais da marca gráfica
+
+Os arquivos recebidos definem hoje uma marca **monocromática**:
+
+- `logo.svg` — preto;
+- `symbol.svg` — preto;
+- `perfil.svg` — preto + branco.
+
+As cores Vermelho ONCI, Azul ONCI, Amarelo ONCI, Laranja ONCI e Terra ONCI pertencem ao sistema visual, **mas não são automaticamente versões de cor do logo**.
+
+#### Não usar dentro do logo enquanto não houver arquivo oficial
+
+- Vermelho `#D71920`;
+- Azul `#1255A6`;
+- Amarelo `#F2B705`;
+- Laranja `#E86A17`;
+- Terra `#8C3B20`;
+- degradês;
+- duas ou mais cores na mesma assinatura;
+- transparência/opacidade reduzida;
+- contornos, sombras, glow, bevel ou texturas.
+
+A cor deve entrar **ao redor** da marca: fundo, fotografia, faixa, CTA, dados e elementos da frente Desempenho/Equipes/Raízes.
+
+### Fundos para o `logo.svg` preto — Regra operacional
+
+**Fundos recomendados atualmente:**
+
+- Branco `#FFFFFF`;
+- Surface `#F5F5F5`;
+- Amarelo ONCI `#F2B705`;
+- Laranja ONCI `#E86A17`;
+- Vermelho ONCI `#D71920`.
+
+**Não aplicar diretamente o logo preto sobre:**
+
+- Preto `#000000`;
+- Surface Dark `#1A1A1A`;
+- Azul ONCI `#1255A6`;
+- Azul Escuro `#0B3468`;
+- Vermelho Escuro `#A80F15`;
+- Terra ONCI `#8C3B20`.
+
+Nesses fundos, não criar uma versão branca improvisada via CSS, filtro ou editor. Usar `perfil.svg` quando a aplicação quadrada for adequada ou criar futuramente um **asset negativo oficial**.
+
+### Usos incorretos
+
+- não redesenhar a marca com a fonte 1797 ou qualquer outra fonte;
+- não esticar ou comprimir;
+- não inclinar/rotacionar além do desenho original;
+- não aplicar sombra, contorno, glow, bevel ou textura;
+- não reduzir opacidade;
+- não colocar a marca dentro de círculos, cápsulas, escudos ou caixas inventadas;
+- não invadir a área X;
+- não cortar `logo.svg` para fabricar um símbolo ou avatar;
+- não usar `symbol.svg` como ícone genérico de interface sem função de marca.
+
+### Aplicação nas três frentes
+
+- **ONCI Desempenho:** vermelho, preto e branco mudam a atmosfera da composição; o logo continua no asset oficial.
+- **ONCI Equipes:** vermelho e azul convivem com escudos e uniformes; a ONCI não deve ser recolorida para combinar com cada parceiro.
+- **ONCI Raízes:** amarelo, laranja e terra entram em superfície, fotografia, matéria e narrativa; não pintar o logo com essas cores.
+
+### O que ainda precisa de validação final de produção
+
+- construção geométrica e unidade X definitiva;
+- prova final das reduções mínimas por técnica física;
+- versão negativa oficial do logo/símbolo, se necessária;
+- regras formais sobre fotografia complexa;
 - lockups de ONCI Desempenho, ONCI Equipes e ONCI Raízes.
 
 ---

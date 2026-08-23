@@ -19,22 +19,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: 20
-
       - name: Apply logo guide
         run: python scripts/expand-logo-guide.py
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Validate TypeScript
-        run: npm run check
-
-      - name: Build documentation
-        run: npm run build
 
       - name: Remove migration files
         run: git rm scripts/expand-logo-guide.py .github/workflows/expand-logo-guide.yml

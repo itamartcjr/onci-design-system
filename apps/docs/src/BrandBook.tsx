@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import './brand-assets.css';
 
 function PageHead({ eyebrow, title, description }: { eyebrow: string; title: string; description: string }) {
   return <div className="page-head"><div className="eyebrow">{eyebrow}</div><h1>{title}</h1><p>{description}</p></div>;
@@ -7,6 +8,8 @@ function PageHead({ eyebrow, title, description }: { eyebrow: string; title: str
 function Section({ title, children, note }: { title: string; children: ReactNode; note?: string }) {
   return <section className="doc-section"><div className="section-heading"><h2>{title}</h2>{note && <p>{note}</p>}</div>{children}</section>;
 }
+
+const asset = (file: string) => `${import.meta.env.BASE_URL}brand/${file}`;
 
 const palette = [
   ['Preto ONCI', 'contrast', '#000000', 'Estrutura, texto e fundos de alto contraste.'],
@@ -30,11 +33,7 @@ const personality = [
 
 export default function BrandBook() {
   return <>
-    <PageHead
-      eyebrow="Marca / Brand Book"
-      title="A ONCI antes da interface."
-      description="O Brand Book é a primeira camada do sistema: define por que a ONCI existe, como se posiciona, como fala e como deve ser reconhecida. O Design System transforma essas decisões em produto digital."
-    />
+    <PageHead eyebrow="Marca / Brand Book" title="A ONCI antes da interface." description="O Brand Book é a primeira camada do sistema: define por que a ONCI existe, como se posiciona, como fala e como deve ser reconhecida. O Design System transforma essas decisões em produto digital." />
 
     <div className="hero-system">
       <div className="hero-words"><span>FORÇA.</span><span>MOVIMENTO.</span><span>RAIZ.</span></div>
@@ -42,7 +41,7 @@ export default function BrandBook() {
         <div><small>Categoria</small><strong>Artigos esportivos</strong></div>
         <div><small>Território</small><strong>Performance + casual</strong></div>
         <div><small>Frentes</small><strong>Desempenho · Equipes · Raízes</strong></div>
-        <div><small>Status</small><strong>Documento vivo · v0.1</strong></div>
+        <div><small>Identidade</small><strong>Assets oficiais incorporados</strong></div>
       </div>
     </div>
 
@@ -65,9 +64,9 @@ export default function BrandBook() {
 
     <Section title="03. Três forças, uma marca" note="As frentes são expressões da ONCI; não são marcas independentes.">
       <div className="brand-lines">
-        <div className="line performance"><div className="line-name">ONCI <b>DESEMPENHO</b></div><p><strong>Preto, branco e vermelho.</strong> Produto, velocidade, precisão, competição, tecnologia, materiais e evolução do atleta. Personalidade rápida, direta e competitiva.</p></div>
-        <div className="line teams"><div className="line-name">ONCI <b>EQUIPES</b></div><p><strong>Vermelho, azul e branco.</strong> Clubes, escolas, equipes, uniformes, campeonatos, projetos personalizados e esporte de base. Personalidade coletiva, vibrante e agregadora.</p></div>
-        <div className="line roots"><div className="line-name">ONCI <b>RAÍZES</b></div><p><strong>Preto, amarelos, laranja e terra.</strong> Brasil, natureza, materialidade, território, histórias, colaborações e casual editorial. Personalidade quente, orgânica e cultural.</p></div>
+        <div className="line performance"><div className="line-name">ONCI <b>DESEMPENHO</b></div><p><strong>Preto, branco e vermelho.</strong> Produto, velocidade, precisão, competição, tecnologia, materiais e evolução do atleta.</p></div>
+        <div className="line teams"><div className="line-name">ONCI <b>EQUIPES</b></div><p><strong>Vermelho, azul e branco.</strong> Clubes, escolas, equipes, uniformes, campeonatos, projetos personalizados e esporte de base.</p></div>
+        <div className="line roots"><div className="line-name">ONCI <b>RAÍZES</b></div><p><strong>Preto, amarelos, laranja e terra.</strong> Brasil, natureza, materialidade, território, histórias, colaborações e casual editorial.</p></div>
       </div>
     </Section>
 
@@ -75,7 +74,7 @@ export default function BrandBook() {
       <div className="two-col-text">
         <p><strong>Território:</strong> roupa esportiva funcional, cultura esportiva, uso casual, times e instituições, formação de atletas e identidade brasileira contemporânea.</p>
         <p><strong>Identidade brasileira sem caricatura:</strong> a origem deve ser reconhecível sem reduzir o Brasil a símbolos óbvios ou tendências passageiras.</p>
-        <p><strong>Indivíduo + equipe:</strong> a ONCI deve conseguir atender quem treina sozinho e, ao mesmo tempo, clubes, escolas e projetos esportivos.</p>
+        <p><strong>Indivíduo + equipe:</strong> a ONCI atende quem treina sozinho e também clubes, escolas e projetos esportivos.</p>
         <p><strong>Produto primeiro:</strong> design e comunicação existem para valorizar a peça, o atleta, o time e a história.</p>
       </div>
     </Section>
@@ -92,83 +91,63 @@ export default function BrandBook() {
     </Section>
 
     <Section title="06. Personalidade" note="Comportamento da marca em qualquer canal.">
-      <div className="principles-list">
-        {personality.map(([title, text], index) => <div className="principle" key={title}><span>{String(index + 1).padStart(2, '0')}</span><div><h2>{title}</h2><p>{text}</p></div></div>)}
-      </div>
+      <div className="principles-list">{personality.map(([title, text], index) => <div className="principle" key={title}><span>{String(index + 1).padStart(2, '0')}</span><div><h2>{title}</h2><p>{text}</p></div></div>)}</div>
       <div className="rule-callout"><strong>HERÓI + TIME</strong><p><code>PROPOSTA</code> — O comportamento combina evolução, esforço e performance com pertencimento, proximidade e construção coletiva.</p></div>
     </Section>
 
     <Section title="07. Voz e tom" note="Frases curtas. Verbos ativos. Pouca ornamentação. Segurança. Ritmo.">
       <div className="two-col-text">
         <p><strong>Falar de ação antes de abstração.</strong> Preferir português natural, texto simples e memorável e termos técnicos somente quando trouxerem precisão.</p>
-        <p><strong>Tratar o público como capaz.</strong> Atleta, equipe e consumidor não precisam de uma voz condescendente nem de motivação genérica.</p>
+        <p><strong>Tratar o público como capaz.</strong> Atleta, equipe e consumidor não precisam de motivação genérica.</p>
         <p><strong>Evitar:</strong> excesso de adjetivos, linguagem militarizada gratuita, humilhação do adversário, excesso de inglês e promessas que o produto não sustenta.</p>
         <p><strong>Direções editoriais, não slogans aprovados:</strong> “O jogo começa antes do apito.” · “Feito para entrar em movimento.” · “Da base para o próximo nível.”</p>
       </div>
     </Section>
 
     <Section title="08. Sistema visual" note="Branco e preto formam a estrutura. Cor entra com intenção.">
-      <div className="color-list">
-        {palette.map(([name, token, hex, usage]) => <div className="color-row" key={token}><div className="color-swatch" style={{ background: hex }}/><div><strong>{name}</strong><code>color.{token}</code></div><code>{hex}</code><p>{usage}</p></div>)}
-      </div>
+      <div className="color-list">{palette.map(([name, token, hex, usage]) => <div className="color-row" key={token}><div className="color-swatch" style={{ background: hex }}/><div><strong>{name}</strong><code>color.{token}</code></div><code>{hex}</code><p>{usage}</p></div>)}</div>
       <div className="font-showcase" style={{ marginTop: 36 }}>
         <div className="font-card primary"><span>Interface</span><h2>Nunito Sans</h2><p>Clareza para navegação, produto, formulários, dados, documentação e textos longos.</p></div>
         <div className="font-card brand"><span>Marca</span><h2>1797</h2><p>FORÇA<br/>EM MOVIMENTO.</p><small>A família é referenciada, mas o arquivo de fonte não é redistribuído neste repositório.</small></div>
       </div>
     </Section>
 
-    <Section title="09. Logo e assinatura" note="Pendente do vetor oficial da ONCI.">
-      <div className="two-col-text">
-        <p><strong>Já podemos exigir:</strong> preservar a grafia ONCI; não distorcer, comprimir ou inclinar adicionalmente; evitar efeitos, sombras e contornos não previstos; priorizar alto contraste.</p>
-        <p><strong>Precisamos documentar quando o asset entrar:</strong> construção, proporção, área de proteção, tamanho mínimo, positivo/negativo, monocromia, fotografia, símbolo isolado e lockups Desempenho/Equipes/Raízes.</p>
+    <Section title="09. Logo e assinatura" note="Assets vetoriais oficiais fornecidos para a ONCI.">
+      <div className="brand-assets">
+        <article className="brand-asset"><div className="brand-asset__preview logo"><img src={asset('logo.svg')} alt="Logo oficial ONCI" /></div><h3>Logo principal</h3><code>brand/logo.svg</code><p>Assinatura completa da ONCI. É a versão prioritária para cabeçalhos, comunicação institucional e aplicações em que existe largura suficiente.</p></article>
+        <article className="brand-asset"><div className="brand-asset__preview symbol"><img src={asset('symbol.svg')} alt="Símbolo oficial ONCI" /></div><h3>Símbolo</h3><code>brand/symbol.svg</code><p>Marca isolada para espaços compactos, ícones de produto e aplicações em que a assinatura completa não é necessária.</p></article>
+        <article className="brand-asset"><div className="brand-asset__preview dark profile"><img src={asset('perfil.svg')} alt="Aplicação de perfil oficial ONCI" /></div><h3>Perfil</h3><code>brand/perfil.svg</code><p>Aplicação quadrada preta com símbolo branco, indicada para avatar, perfil social e superfícies quadradas equivalentes.</p></article>
+      </div>
+      <div className="brand-rule-grid">
+        <div><strong>Preservar o desenho</strong><p>Não redesenhar, esticar, comprimir, inclinar adicionalmente nem alterar as proporções internas dos vetores oficiais.</p></div>
+        <div><strong>Alto contraste</strong><p>Priorizar aplicações em preto e branco. Variações cromáticas só devem ser documentadas quando aprovadas como versões oficiais.</p></div>
+        <div><strong>Sem efeitos gratuitos</strong><p>Não aplicar sombra, contorno, bevel, glow, textura ou deformação como parte da assinatura.</p></div>
+        <div><strong>Ainda por definir</strong><p>Área de proteção, redução mínima, versões cromáticas adicionais e lockups formais de Desempenho, Equipes e Raízes precisam de especificação própria.</p></div>
       </div>
     </Section>
 
     <Section title="10. Fotografia e direção de arte" note="Movimento real. Produto visível. Contexto verdadeiro.">
       <div className="research-list">
         <div className="research-item"><span>01</span><div><h2>Desempenho</h2><p>Ação, detalhe técnico, suor, textura e esforço sem artificialidade; contraste alto e composição precisa.</p></div></div>
-        <div className="research-item"><span>02</span><div><h2>Equipes</h2><p>Grupo, uniformes completos, gesto coletivo, arquibancada, escola, quadra, campo e bastidores. A identidade do parceiro convive com a ONCI.</p></div></div>
+        <div className="research-item"><span>02</span><div><h2>Equipes</h2><p>Grupo, uniformes completos, gesto coletivo, arquibancada, escola, quadra, campo e bastidores.</p></div></div>
         <div className="research-item"><span>03</span><div><h2>Raízes</h2><p>Paisagem, matéria, cor, textura, território brasileiro específico, pessoas e histórias reais e colaborações culturais com autoria visível.</p></div></div>
       </div>
     </Section>
 
-    <Section title="11. Cultura e referências" note="Inspiração não é cópia.">
-      <div className="rule-callout"><strong>CONTEXTO.</strong><p>Referências a artesanatos e culturas indígenas devem ser tratadas com responsabilidade. Evitar copiar grafismos específicos, sagrados ou identificáveis sem contexto, autorização e colaboração. Quando a inspiração for direta, priorizar parceria e crédito.</p></div>
-    </Section>
+    <Section title="11. Cultura e referências" note="Inspiração não é cópia."><div className="rule-callout"><strong>CONTEXTO.</strong><p>Referências a artesanatos e culturas indígenas devem ser tratadas com responsabilidade. Evitar copiar grafismos específicos ou identificáveis sem contexto, autorização e colaboração. Quando a inspiração for direta, priorizar parceria e crédito.</p></div></Section>
 
-    <Section title="12. Produto e experiência">
-      <div className="two-col-text">
-        <p><strong>Produto primeiro:</strong> em e-commerce, a peça domina a hierarquia. Fotografia grande, preço e variações claros, filtros objetivos e CTA direto.</p>
-        <p><strong>Coerência multicanal:</strong> web, app, WordPress, campanha e experiências futuras compartilham o mesmo vocabulário visual.</p>
-        <p><strong>Acessibilidade:</strong> faz parte da definição de cada componente e não entra depois como correção.</p>
-        <p><strong>Sistema:</strong> decisões recorrentes devem virar token, variante, componente ou padrão reutilizável.</p>
-      </div>
-    </Section>
+    <Section title="12. Produto e experiência"><div className="two-col-text"><p><strong>Produto primeiro:</strong> fotografia grande, preço e variações claros, filtros objetivos e CTA direto.</p><p><strong>Coerência multicanal:</strong> web, app, WordPress, campanha e experiências futuras compartilham o mesmo vocabulário visual.</p><p><strong>Acessibilidade:</strong> faz parte da definição de cada componente.</p><p><strong>Sistema:</strong> decisões recorrentes viram token, variante, componente ou padrão reutilizável.</p></div></Section>
 
     <Section title="13. Esporte de base e comunidade" note="Direção estratégica já presente na construção da ONCI.">
-      <div className="research-list">
-        <div className="research-item"><span>01</span><div><h2>Eventos</h2><p>Patrocínio de eventos esportivos infanto-juvenis estaduais e nacionais para crescer junto do público e da prática esportiva.</p></div></div>
-        <div className="research-item"><span>02</span><div><h2>Equipes</h2><p>Fornecimento de uniformes, relacionamento com escolas, clubes e projetos esportivos e construção de identidade em parceria.</p></div></div>
-        <div className="research-item"><span>03</span><div><h2>Atletas em formação</h2><p>Apoio a atletas e possibilidade de bolsas ou parcerias educacionais/esportivas estruturadas, com atletas e equipes como embaixadores reais da evolução da marca.</p></div></div>
-      </div>
+      <div className="research-list"><div className="research-item"><span>01</span><div><h2>Eventos</h2><p>Patrocínio de eventos esportivos infanto-juvenis estaduais e nacionais.</p></div></div><div className="research-item"><span>02</span><div><h2>Equipes</h2><p>Fornecimento de uniformes e relacionamento com escolas, clubes e projetos esportivos.</p></div></div><div className="research-item"><span>03</span><div><h2>Atletas em formação</h2><p>Apoio a atletas e possibilidade de bolsas ou parcerias educacionais/esportivas estruturadas.</p></div></div></div>
       <div className="rule-callout"><strong>DA BASE.</strong><p>A ONCI não chega apenas quando o atleta vence. A marca pode participar da construção do caminho.</p></div>
     </Section>
 
-    <Section title="14. Regras de expressão">
-      <div className="two-col-text">
-        <p><strong>FAZER:</strong> produto em primeiro plano; contraste forte; grids claros; cor com intenção; Brasil contemporâneo; pessoas e comunidades com contexto real.</p>
-        <p><strong>EVITAR:</strong> estética fitness genérica; Brasil reduzido a clichês; cultura como ornamento; efeitos gratuitos no logo; copiar códigos proprietários de concorrentes.</p>
-      </div>
-    </Section>
+    <Section title="14. Regras de expressão"><div className="two-col-text"><p><strong>FAZER:</strong> produto em primeiro plano; contraste forte; grids claros; cor com intenção; Brasil contemporâneo; pessoas e comunidades com contexto real.</p><p><strong>EVITAR:</strong> estética fitness genérica; Brasil reduzido a clichês; cultura como ornamento; efeitos gratuitos no logo; copiar códigos proprietários de concorrentes.</p></div></Section>
 
     <Section title="15. Governança" note="Marca define intenção; Design System transforma intenção em código.">
-      <div className="token-map">
-        <div><code>DEFINIDO</code><span>Decisão consolidada que já pode orientar implementação.</span></div>
-        <div><code>PROPOSTA</code><span>Formulação que organiza a estratégia, mas pode ser refinada.</span></div>
-        <div><code>PENDENTE</code><span>Depende de asset oficial, validação ou decisão futura.</span></div>
-        <div><code>FONTE DE VERDADE</code><span>O conteúdo completo e versionável permanece em docs/brand-book.md.</span></div>
-      </div>
-      <div className="do-not-copy" style={{ marginTop: 24 }}><span>Logo vetorial</span><span>Área de proteção</span><span>Redução mínima</span><span>Positivo / negativo</span><span>Lockups das frentes</span><span>Aprovação final de missão e visão</span></div>
+      <div className="token-map"><div><code>DEFINIDO</code><span>Decisão consolidada que já pode orientar implementação.</span></div><div><code>PROPOSTA</code><span>Formulação que organiza a estratégia, mas pode ser refinada.</span></div><div><code>PENDENTE</code><span>Depende de validação ou decisão futura.</span></div><div><code>FONTE DE VERDADE</code><span>O conteúdo completo e versionável permanece em docs/brand-book.md.</span></div></div>
+      <div className="do-not-copy" style={{ marginTop: 24 }}><span>Assets oficiais incorporados</span><span>Área de proteção</span><span>Redução mínima</span><span>Versões cromáticas</span><span>Lockups das frentes</span><span>Aprovação final de missão e visão</span></div>
     </Section>
   </>;
 }

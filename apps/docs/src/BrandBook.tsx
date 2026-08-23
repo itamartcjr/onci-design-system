@@ -47,6 +47,27 @@ export default function BrandBook() {
     </div>
 
     <Section title="01. A marca" note="Núcleo já definido para orientar produto, comunicação e experiência.">
+      <div className="brand-identity-showcase" aria-label="Identidade visual oficial ONCI">
+        <div className="brand-identity-primary">
+          <span>ASSINATURA PRINCIPAL</span>
+          <div className="brand-identity-primary__canvas">
+            <img src={asset('logo.svg')} alt="Logo principal oficial ONCI" />
+          </div>
+          <p>Esta é a assinatura principal da ONCI e deve ser a primeira escolha sempre que houver espaço suficiente.</p>
+        </div>
+        <div className="brand-identity-secondary">
+          <div className="brand-identity-mark">
+            <span>SÍMBOLO</span>
+            <div className="brand-identity-mark__canvas light"><img src={asset('symbol.svg')} alt="Símbolo oficial ONCI" /></div>
+            <p>Uso compacto quando a marca já estiver reconhecida no contexto.</p>
+          </div>
+          <div className="brand-identity-mark">
+            <span>PERFIL</span>
+            <div className="brand-identity-mark__canvas dark"><img src={asset('perfil.svg')} alt="Aplicação oficial de perfil ONCI" /></div>
+            <p>Avatar, favicon, redes sociais e outras superfícies quadradas.</p>
+          </div>
+        </div>
+      </div>
       <div className="principles-list">
         <div className="principle"><span>01</span><div><h2>ONCI</h2><p><code>DEFINIDO</code> — Nome curto que remete à <strong>onça</strong>, buscando memória rápida, sonoridade forte e uma terminação marcante. A onça é referência de presença, potência, precisão e origem brasileira, sem precisar virar um clichê visual obrigatório.</p></div></div>
         <div className="principle"><span>02</span><div><h2>Categoria</h2><p><code>DEFINIDO</code> — Marca brasileira de artigos esportivos com atuação entre <strong>performance e casual</strong>, começando por vestuário esportivo básico e evoluindo para um ecossistema mais amplo de produto, equipes e experiências esportivas.</p></div></div>

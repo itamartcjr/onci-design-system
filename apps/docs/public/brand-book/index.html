@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Brand Book ONCI — estratégia, identidade, arquitetura de marca e princípios de expressão." />
+  <title>ONCI — Brand Book</title>
+  <style>
+    :root{--black:#000;--white:#fff;--red:#D71920;--blue:#1255A6;--yellow:#F2B705;--orange:#E86A17;--earth:#8C3B20;--surface:#f4f4f4;--border:#dedede;--muted:#666;--max:1240px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--white);color:var(--black);font-family:"Nunito Sans",Arial,sans-serif;line-height:1.5}a{color:inherit}button,a{-webkit-tap-highlight-color:transparent}.wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}.top .wrap{height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px}.mark{display:flex;align-items:baseline;gap:12px;text-decoration:none}.mark strong{font-family:"1797","Arial Black",sans-serif;font-style:italic;font-size:28px;letter-spacing:-1px}.mark span{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted)}.top nav{display:flex;gap:22px;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}.top nav a{text-decoration:none}.top nav a:hover{color:var(--red)}
+    .hero{background:var(--black);color:var(--white);min-height:74vh;display:grid;align-items:end;padding:72px 0}.hero-grid{display:grid;grid-template-columns:1.45fr .55fr;gap:56px;align-items:end}.eyebrow{font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}.hero h1{font-family:"1797","Arial Black",sans-serif;font-style:italic;font-size:clamp(64px,10vw,150px);line-height:.82;letter-spacing:-.055em;margin:0;text-transform:uppercase}.hero h1 span{color:var(--red)}.hero p{max-width:720px;font-size:20px;margin:32px 0 0;color:#d8d8d8}.hero-meta{border-left:1px solid #333;padding-left:28px}.hero-meta div{padding:16px 0;border-bottom:1px solid #333}.hero-meta small{display:block;color:#888;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.hero-meta strong{display:block;margin-top:5px;font-size:16px}.status{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.09em}.status:before{content:"";width:8px;height:8px;background:var(--red);display:block}
+    section{padding:96px 0;border-bottom:1px solid var(--border)}.section-head{display:grid;grid-template-columns:220px 1fr;gap:40px;margin-bottom:48px}.section-head span{font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}.section-head h2{font-size:clamp(36px,5vw,68px);line-height:.95;letter-spacing:-.045em;margin:0;max-width:850px}.lead{font-size:22px;max-width:820px;margin:0;color:#333}.prose{max-width:820px;margin-left:260px}.prose p{font-size:18px}.quote{font-family:"1797","Arial Black",sans-serif;font-style:italic;font-size:clamp(34px,5vw,66px);line-height:.95;margin:52px 0;padding-left:28px;border-left:8px solid var(--red);text-transform:uppercase}.badge{display:inline-flex;padding:5px 8px;border:1px solid currentColor;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.12em}.defined{color:#147a34}.proposed{color:#9a5d00}.pending{color:#666}
+    .triad{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--black)}.pillar{min-height:430px;padding:36px;background:var(--white);display:flex;flex-direction:column;justify-content:space-between}.pillar:before{content:"";height:10px;background:var(--red);display:block;margin:-36px -36px 32px}.pillar.teams:before{background:linear-gradient(90deg,var(--red) 0 50%,var(--blue) 50%)}.pillar.roots{background:#111;color:#fff}.pillar.roots:before{background:linear-gradient(90deg,var(--yellow),var(--orange),var(--earth))}.pillar small{font-size:11px;text-transform:uppercase;letter-spacing:.13em;font-weight:900;color:var(--muted)}.pillar.roots small{color:#aaa}.pillar h3{font-family:"1797","Arial Black",sans-serif;font-style:italic;font-size:40px;line-height:.9;text-transform:uppercase;margin:18px 0}.pillar p{font-size:16px}.pillar ul{padding-left:18px;margin:24px 0 0}
+    .position{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}.position>div{background:#fff;padding:38px}.position h3{font-size:26px;margin:0 0 16px}.position ul{padding-left:20px;margin:0}.position li{margin:9px 0}
+    .personality{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.trait{border:1px solid var(--border);padding:28px;min-height:190px}.trait strong{font-size:24px}.trait p{color:#555}.trait:nth-child(1),.trait:nth-child(5){border-top:6px solid var(--red)}.trait:nth-child(2),.trait:nth-child(6){border-top:6px solid var(--blue)}.trait:nth-child(3),.trait:nth-child(7){border-top:6px solid var(--yellow)}.trait:nth-child(4){border-top:6px solid var(--black)}
+    .voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.voice-card{padding:36px;background:var(--surface)}.voice-card h3{font-size:30px;margin:0 0 20px}.voice-card ul{padding-left:20px}.example{margin-top:28px;padding:22px;background:#fff;border-left:5px solid var(--red);font-weight:800;font-size:20px}.note{font-size:12px;color:var(--muted);margin-top:10px}
+    .palette{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--black)}.swatch{min-height:250px;padding:20px;display:flex;flex-direction:column;justify-content:flex-end}.swatch strong{font-size:16px}.swatch code{font-size:12px}.swatch.black{background:#000;color:#fff}.swatch.white{background:#fff}.swatch.red{background:var(--red);color:#fff}.swatch.blue{background:var(--blue);color:#fff}.swatch.yellow{background:var(--yellow)}.swatch.orange{background:var(--orange);color:#fff}.swatch.earth{background:var(--earth);color:#fff}
+    .type-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--black)}.type-card{background:#fff;padding:42px;min-height:330px}.type-card.dark{background:#111;color:#fff}.type-card small{text-transform:uppercase;letter-spacing:.13em;font-weight:900;color:#777}.type-card h3{margin:26px 0 8px;font-size:46px}.type-card.brand h3{font-family:"1797","Arial Black",sans-serif;font-style:italic;text-transform:uppercase;font-size:64px;line-height:.9}.type-card p{font-size:18px;max-width:500px}
+    .visual-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.visual-rule{min-height:260px;padding:30px;border:1px solid var(--border)}.visual-rule .n{font-family:"1797","Arial Black",sans-serif;font-style:italic;font-size:48px;color:var(--red)}.visual-rule h3{font-size:24px}.visual-rule p{color:#555}
+    .photo-board{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:250px 250px;gap:8px}.photo{position:relative;overflow:hidden;padding:22px;display:flex;align-items:flex-end;color:#fff;background:#171717}.photo:before{content:"";position:absolute;inset:0;opacity:.8}.photo span{position:relative;z-index:1;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.photo.performance{grid-row:1/3;background:linear-gradient(145deg,#090909,#3a3a3a)}.photo.performance:after{content:"MOVIMENTO";position:absolute;right:-20px;top:40%;font-family:"1797","Arial Black",sans-serif;font-style:italic;font-size:70px;transform:rotate(-90deg);opacity:.15}.photo.team{background:linear-gradient(135deg,var(--blue),#071b34)}.photo.roots{background:linear-gradient(135deg,var(--earth),var(--orange))}.photo.product{background:linear-gradient(135deg,#eee,#bbb);color:#000}.photo.community{background:linear-gradient(135deg,var(--red),#4a0000)}
+    .base-strategy{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}.big-number{font-family:"1797","Arial Black",sans-serif;font-style:italic;font-size:180px;line-height:.7;color:var(--red)}.base-strategy h3{font-size:36px;margin:0 0 20px}.base-strategy ul{font-size:18px;padding-left:20px}.base-strategy li{margin:12px 0}.statement{margin-top:50px;background:var(--black);color:#fff;padding:42px;font-family:"1797","Arial Black",sans-serif;font-style:italic;font-size:clamp(34px,5vw,65px);line-height:.95;text-transform:uppercase}.statement span{color:var(--red)}
+    .do-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#000}.do{background:#fff;padding:40px}.do h3{font-size:28px}.do.yes h3{color:#147a34}.do.no h3{color:var(--red)}.do ul{padding-left:18px}.do li{margin:10px 0}
+    .governance{background:#f6f6f6}.status-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}.status-card{background:#fff;padding:28px;border:1px solid var(--border)}.status-card b{display:block;margin-bottom:10px}.next{margin-top:42px;counter-reset:item;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border)}.next div{background:#fff;padding:24px;counter-increment:item}.next div:before{content:"0" counter(item);display:block;font-weight:900;color:var(--red);margin-bottom:8px}
+    footer{background:#000;color:#fff;padding:68px 0}.foot{display:flex;justify-content:space-between;gap:40px;align-items:flex-end}.foot-brand{font-family:"1797","Arial Black",sans-serif;font-style:italic;font-size:64px;line-height:.8}.foot p{color:#aaa;max-width:520px}.foot a{color:#fff}.foot small{display:block;color:#777;margin-top:14px}
+    @media(max-width:900px){.top nav{display:none}.hero-grid,.section-head,.base-strategy{grid-template-columns:1fr}.hero{min-height:auto}.hero-meta{border-left:0;padding-left:0;border-top:1px solid #333;padding-top:20px}.prose{margin-left:0}.triad,.personality,.palette,.visual-rules{grid-template-columns:1fr 1fr}.position,.voice-grid,.type-grid,.do-grid,.status-grid,.next{grid-template-columns:1fr}.photo-board{grid-template-columns:1fr 1fr;grid-template-rows:240px 180px 180px}.photo.performance{grid-row:auto;grid-column:1/3}.big-number{font-size:120px}.section-head{gap:12px}}
+    @media(max-width:620px){.wrap{width:min(calc(100% - 28px),var(--max))}.top .wrap{height:60px}.mark span{display:none}.hero{padding:54px 0}.hero h1{font-size:58px}.hero p{font-size:17px}section{padding:64px 0}.triad,.personality,.palette,.visual-rules{grid-template-columns:1fr}.pillar{min-height:auto}.palette .swatch{min-height:150px}.photo-board{display:grid;grid-template-columns:1fr;grid-template-rows:none}.photo,.photo.performance{grid-column:auto;min-height:180px}.foot{display:block}.foot-brand{margin-bottom:24px}}
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="mark" href="/onci-design-system/"><strong>ONCI</strong><span>Brand Book · v0.1</span></a>
+      <nav>
+        <a href="#marca">Marca</a><a href="#arquitetura">Arquitetura</a><a href="#visual">Visual</a><a href="#voz">Voz</a><a href="#base">Esporte de base</a><a href="#governanca">Governança</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">ONCI / Brand Book</div>
+          <h1>FORÇA.<br><span>MOVIMENTO.</span><br>RAIZ.</h1>
+          <p>Um sistema de marca para conectar produto, performance, equipes, cultura esportiva e a origem brasileira da ONCI.</p>
+        </div>
+        <div class="hero-meta">
+          <div><small>Categoria</small><strong>Artigos esportivos</strong></div>
+          <div><small>Território</small><strong>Performance + casual</strong></div>
+          <div><small>Frentes</small><strong>Desempenho · Equipes · Raízes</strong></div>
+          <div><small>Base visual</small><strong>Preto · branco · vermelho</strong></div>
+          <span class="status">Documento vivo</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="marca">
+      <div class="wrap">
+        <div class="section-head"><span>01 / A marca</span><h2>Um nome curto, forte e ligado à onça.</h2></div>
+        <div class="prose">
+          <span class="badge defined">Definido</span>
+          <p class="lead">ONCI nasce como um nome curto que remete à <strong>onça</strong>: presença, potência, precisão e origem brasileira. A terminação curta e forte ajuda a marca a ser memorável.</p>
+          <p>A onça é uma referência de atitude, não um elemento que precisa aparecer literalmente em toda aplicação. A marca deve construir reconhecimento por produto, tipografia, cor, comportamento e presença no esporte.</p>
+          <div class="quote">Performance.<br>Pertencimento.<br>Raiz.</div>
+          <p><span class="badge proposed">Proposta</span></p>
+          <p><strong>Propósito:</strong> dar força ao movimento e crescer junto de quem pratica o esporte.</p>
+          <p><strong>Missão:</strong> criar produtos e experiências esportivas funcionais, desejáveis e acessíveis, com identidade brasileira, apoiando indivíduos e equipes na evolução dentro e fora da competição.</p>
+          <p><strong>Visão:</strong> ser uma marca esportiva brasileira reconhecida por performance, cultura e capacidade de construir relações de longo prazo com atletas, equipes e comunidades.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="arquitetura">
+      <div class="wrap">
+        <div class="section-head"><span>02 / Arquitetura</span><h2>Três frentes. Uma ONCI.</h2></div>
+        <div class="triad">
+          <article class="pillar performance"><div><small>Performance individual</small><h3>ONCI<br>Desempenho</h3><p>Velocidade, precisão, competição, tecnologia e produto em primeiro plano.</p></div><ul><li>Preto + branco + vermelho</li><li>Treino, corrida e competição</li><li>Fotografia de ação</li><li>Contraste alto</li></ul></article>
+          <article class="pillar teams"><div><small>Força coletiva</small><h3>ONCI<br>Equipes</h3><p>Times, escolas, clubes, uniformes, projetos esportivos e pertencimento.</p></div><ul><li>Vermelho + azul + branco</li><li>Esporte de base</li><li>Uniformes e personalização</li><li>Identidade coletiva</li></ul></article>
+          <article class="pillar roots"><div><small>Origem e cultura</small><h3>ONCI<br>Raízes</h3><p>Brasil, território, matéria, cor e histórias com uma expressão editorial mais quente.</p></div><ul><li>Preto + amarelo + laranja + terra</li><li>Casual e colaborações</li><li>Textura e materialidade</li><li>Referências culturais com autoria</li></ul></article>
+        </div>
+        <div class="position" style="margin-top:28px">
+          <div><h3>Território</h3><ul><li>Roupa esportiva funcional</li><li>Cultura esportiva</li><li>Performance e casual</li><li>Times e instituições</li><li>Formação de atletas</li><li>Identidade brasileira contemporânea</li></ul></div>
+          <div><h3>Diferenciação</h3><ul><li>Brasil sem caricatura</li><li>Proximidade com esporte de base</li><li>Atendimento a indivíduo e equipe</li><li>Visual forte e simples</li><li>Produto em primeiro plano</li><li>Relações esportivas de longo prazo</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head"><span>03 / Personalidade</span><h2>Forte sem ser agressiva. Energética sem ser barulhenta.</h2></div>
+        <div class="personality">
+          <div class="trait"><strong>Forte</strong><p>Presença, decisão e confiança sem hostilidade.</p></div>
+          <div class="trait"><strong>Direta</strong><p>Clareza acima de ornamentação e discurso vazio.</p></div>
+          <div class="trait"><strong>Energética</strong><p>Movimento e ritmo nos pontos que pedem intensidade.</p></div>
+          <div class="trait"><strong>Competitiva</strong><p>Ambição e evolução sem diminuir o adversário.</p></div>
+          <div class="trait"><strong>Brasileira</strong><p>Origem real e contemporânea, sem clichês nacionais.</p></div>
+          <div class="trait"><strong>Coletiva</strong><p>Time, escola, clube e comunidade fazem parte do sistema.</p></div>
+          <div class="trait"><strong>Contemporânea</strong><p>Atual sem depender de tendências que apaguem a identidade.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="voz">
+      <div class="wrap">
+        <div class="section-head"><span>04 / Voz e tom</span><h2>Frases curtas. Verbos ativos. Ritmo de quem está em movimento.</h2></div>
+        <div class="voice-grid">
+          <article class="voice-card"><h3>A ONCI fala assim</h3><ul><li>Direto ao ponto.</li><li>Português natural.</li><li>Produto e ação antes de abstração.</li><li>Termos técnicos quando trazem precisão.</li><li>Confiança sem arrogância.</li><li>Motivação ligada a contexto real.</li></ul><div class="example">“O jogo começa antes do apito.”</div><div class="note">Exemplo de direção editorial — não é slogan oficial.</div></article>
+          <article class="voice-card"><h3>A ONCI evita</h3><ul><li>Frases fitness genéricas.</li><li>Excesso de adjetivos.</li><li>Linguagem militarizada gratuita.</li><li>Humilhação do adversário.</li><li>Inglês usado só para parecer esportivo.</li><li>Promessas de performance sem comprovação de produto.</li></ul><div class="example">Menos “supere todos os limites”.<br>Mais ação específica e verdadeira.</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="visual">
+      <div class="wrap">
+        <div class="section-head"><span>05 / Sistema visual</span><h2>Branco e preto formam a estrutura. Cor entra com intenção.</h2></div>
+        <div class="palette">
+          <div class="swatch black"><strong>Preto ONCI</strong><code>#000000</code></div>
+          <div class="swatch white"><strong>Branco</strong><code>#FFFFFF</code></div>
+          <div class="swatch red"><strong>Vermelho</strong><code>#D71920</code></div>
+          <div class="swatch blue"><strong>Azul</strong><code>#1255A6</code></div>
+          <div class="swatch yellow"><strong>Amarelo</strong><code>#F2B705</code></div>
+          <div class="swatch orange"><strong>Laranja</strong><code>#E86A17</code></div>
+          <div class="swatch earth"><strong>Terra</strong><code>#8C3B20</code></div>
+        </div>
+        <div class="type-grid" style="margin-top:30px">
+          <article class="type-card brand dark"><small>Fonte de marca</small><h3>1797</h3><p>Alta energia, títulos, números, chamadas esportivas e momentos editoriais. Preferencialmente forte, itálica e em caixa alta.</p><span class="badge pending">Asset licenciado — não redistribuir</span></article>
+          <article class="type-card"><small>Fonte de interface</small><h3>Nunito Sans</h3><p>Navegação, descrição, formulários, produto, preço, metadados e leitura. É a base de clareza do sistema.</p></article>
+        </div>
+        <div class="visual-rules" style="margin-top:30px">
+          <article class="visual-rule"><div class="n">01</div><h3>Produto primeiro</h3><p>A interface existe para destacar produto, atleta, equipe e história — nunca para competir com eles.</p></article>
+          <article class="visual-rule"><div class="n">02</div><h3>Geometria direta</h3><p>Grids claros, bordas firmes, poucos raios e áreas grandes de respiro.</p></article>
+          <article class="visual-rule"><div class="n">03</div><h3>Energia controlada</h3><p>1797, vermelho, escala e motion criam velocidade; o restante preserva leitura e função.</p></article>
+          <article class="visual-rule"><div class="n">04</div><h3>Números importam</h3><p>Placares, tempos, tamanhos, dados e números de uniforme podem funcionar como matéria visual.</p></article>
+          <article class="visual-rule"><div class="n">05</div><h3>80 / 20</h3><p>Em interfaces, a maior parte permanece neutra. Cor de marca entra para foco, estado e narrativa.</p></article>
+          <article class="visual-rule"><div class="n">06</div><h3>Uma linguagem</h3><p>Web, app, WordPress, campanha, uniforme e evento devem compartilhar o mesmo vocabulário.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head"><span>06 / Fotografia</span><h2>Movimento real. Produto visível. Contexto verdadeiro.</h2></div>
+        <div class="photo-board">
+          <div class="photo performance"><span>Desempenho · ação · detalhe técnico · esforço real</span></div>
+          <div class="photo team"><span>Equipes · grupo · uniforme · pertencimento</span></div>
+          <div class="photo roots"><span>Raízes · território · matéria · histórias</span></div>
+          <div class="photo product"><span>Produto · recorte limpo · material em evidência</span></div>
+          <div class="photo community"><span>Comunidade · escola · clube · bastidores</span></div>
+        </div>
+        <div class="prose" style="margin-top:38px">
+          <p><strong>Evitar:</strong> banco de imagem fitness genérico, pose sem relação com esporte e Brasil reduzido a estereótipos.</p>
+          <p><strong>Referências culturais:</strong> a ONCI pode dialogar com artesanato, território e materialidade brasileira, mas não deve copiar grafismos específicos de povos indígenas como decoração. Quando a inspiração for direta e identificável, a direção é trabalhar com contexto, parceria, autorização e crédito.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="base">
+      <div class="wrap">
+        <div class="section-head"><span>07 / Esporte de base</span><h2>A marca pode crescer junto do atleta — não apenas chegar quando ele vence.</h2></div>
+        <div class="base-strategy">
+          <div><div class="big-number">BASE</div></div>
+          <div><h3>Uma parte da estratégia da ONCI nasce da formação.</h3><ul><li>Patrocinar eventos esportivos infanto-juvenis estaduais e nacionais.</li><li>Escolher equipes e construir uniformes com elas.</li><li>Relacionar-se com escolas, clubes e projetos esportivos.</li><li>Apoiar atletas em formação de maneira estruturada.</li><li>Considerar bolsas e apoio educacional/esportivo em parcerias formais.</li><li>Usar atletas e equipes como embaixadores reais da evolução da marca, não apenas como mídia.</li></ul></div>
+        </div>
+        <div class="statement">A ONCI não chega só na vitória. <span>Ela participa do caminho.</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head"><span>08 / Do & Don't</span><h2>Consistência é também saber o que não fazer.</h2></div>
+        <div class="do-grid">
+          <article class="do yes"><h3>Faça</h3><ul><li>Destaque produto e atleta.</li><li>Use preto e branco como base.</li><li>Dê função à cor.</li><li>Escreva de forma direta.</li><li>Trate equipes como comunidades.</li><li>Use referências brasileiras com especificidade e respeito.</li><li>Documente novas decisões de marca.</li></ul></article>
+          <article class="do no"><h3>Não faça</h3><ul><li>Copiar códigos proprietários de Nike, Adidas ou Puma.</li><li>Usar estética esportiva genérica.</li><li>Aplicar todas as cores sem hierarquia.</li><li>Transformar todo texto em 1797.</li><li>Criar slogans aleatórios a cada campanha.</li><li>Copiar grafismos indígenas como decoração.</li><li>Separar marca, produto e UX em linguagens diferentes.</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="governanca" class="governance">
+      <div class="wrap">
+        <div class="section-head"><span>09 / Governança</span><h2>Brand Book e Design System são duas partes da mesma fonte de verdade.</h2></div>
+        <p class="lead">O Brand Book define <strong>quem a ONCI é e como se expressa</strong>. O Design System transforma essa identidade em tokens, componentes e padrões executáveis.</p>
+        <div class="status-grid">
+          <article class="status-card"><span class="badge defined">Definido</span><b>Decisão estabelecida</b><p>Algo já escolhido e usado no projeto, como frentes, fontes e paleta principal.</p></article>
+          <article class="status-card"><span class="badge proposed">Proposta</span><b>Formulação para validar</b><p>Missão, visão, manifesto, frases ou regras que ainda podem ser refinadas.</p></article>
+          <article class="status-card"><span class="badge pending">Pendente</span><b>Depende de asset ou decisão</b><p>Ex.: regras exatas do logo oficial enquanto o vetor não estiver no repositório.</p></article>
+        </div>
+        <div class="next">
+          <div>Incorporar o logo vetorial oficial e suas versões.</div>
+          <div>Fechar propósito, missão e visão em redação final.</div>
+          <div>Decidir se a ONCI terá tagline institucional.</div>
+          <div>Criar direção fotográfica com imagens próprias.</div>
+          <div>Definir sistema de grafismos e materialidade.</div>
+          <div>Documentar embalagem, etiqueta e aplicações físicas.</div>
+          <div>Criar templates de patrocínio, equipes e eventos.</div>
+          <div>Nomear tecnologias de produto apenas quando forem reais.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <div><div class="foot-brand">ONCI</div><small>Brand Book · versão 0.1</small></div>
+      <div><p><strong>Síntese editorial proposta:</strong> ONCI é uma marca esportiva brasileira feita para performance, pertencimento e evolução — do primeiro treino ao próximo nível.</p><a href="/onci-design-system/">Voltar ao Design System →</a><small>Esta frase orienta o documento e não é uma tagline oficial.</small></div>
+    </div>
+  </footer>
+</body>
+</html>

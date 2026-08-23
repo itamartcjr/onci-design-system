@@ -28,7 +28,10 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --no-audit --no-fund
+
+      - name: Validate TypeScript
+        run: npm run check
 
       - name: Build documentation
         run: npm run build

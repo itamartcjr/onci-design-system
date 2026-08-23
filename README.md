@@ -1,5 +1,9 @@
 # ONCI Design System
 
+<p align="center">
+  <img src="apps/docs/public/brand/logo.svg" alt="Logo oficial ONCI" width="280" />
+</p>
+
 Documentação viva da linguagem visual **e da marca ONCI**.
 
 O repositório organiza o **Brand Book** e o **Design System na mesma aplicação**, para que estratégia de marca, identidade, tokens, componentes e experiências digitais evoluam a partir da mesma fonte de verdade.
@@ -63,6 +67,7 @@ O Brand Book documenta:
 - públicos e personalidade;
 - voz e tom;
 - paleta e tipografia;
+- logo, símbolo e aplicação de perfil oficiais;
 - direção fotográfica e linguagem gráfica;
 - esporte de base, patrocínios e comunidade;
 - regras de uso e governança da marca.
@@ -85,13 +90,17 @@ A base inicial foi sincronizada com as decisões existentes no `wp-onci`:
 - **Wide:** 1400px
 - **Botões:** cantos retos, 1797, itálico, caixa alta
 
-### Fontes e logo
+### Fontes e marca oficial
 
 Este repositório **não redistribui os arquivos binários da fonte 1797**. A aplicação referencia o nome da família e usa fallback durante o desenvolvimento. Em produção, a fonte deverá ser carregada a partir do asset oficial/licenciado da ONCI.
 
-Ainda não existe no repositório um arquivo vetorial oficial do logo/wordmark ONCI. Por isso a documentação usa temporariamente um lockup tipográfico `ONCI` e reserva `apps/docs/public/brand/` para receber os assets oficiais, sem redesenhar ou adivinhar o símbolo.
+Os assets vetoriais oficiais da ONCI estão em `apps/docs/public/brand/` e são usados diretamente pela documentação:
 
-Quando o vetor oficial entrar, o Brand Book deverá ganhar as regras definitivas de construção, área de proteção, redução mínima, versões positivas/negativas e lockups das três frentes.
+- `logo.svg` — assinatura principal;
+- `symbol.svg` — símbolo isolado;
+- `perfil.svg` — aplicação quadrada para perfil/avatar e favicon.
+
+O Brand Book já usa esses arquivos oficiais. Permanecem como decisões futuras apenas as especificações que os vetores, sozinhos, não determinam: área de proteção, redução mínima, versões cromáticas adicionais e lockups formais de ONCI Desempenho, ONCI Equipes e ONCI Raízes.
 
 ## Referência Adidas
 

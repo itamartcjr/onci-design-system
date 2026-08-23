@@ -1,5 +1,9 @@
 # ONCI Brand Book
 
+<p align="center">
+  <img src="../apps/docs/public/brand/logo.svg" alt="Logo oficial ONCI" width="360" />
+</p>
+
 > Versão 0.1 — documento vivo de marca.
 >
 > Este arquivo reúne decisões já definidas no projeto ONCI e formulações estratégicas propostas para organizar a marca. Sempre que algo ainda não foi formalmente aprovado, está marcado como **Proposta** ou **Pendente**.
@@ -274,28 +278,51 @@ A 1797 cria impulso. A Nunito Sans cria clareza. A identidade aparece na tensão
 
 ## 11. Logo e assinatura
 
-### Estado atual — Pendente de asset oficial
+### Estado atual — Definido
 
-O repositório do Design System ainda não contém um arquivo vetorial oficial da marca ONCI. Até que o asset seja incorporado, não devem ser inventadas proporções, áreas de proteção ou versões alternativas do símbolo.
+Os vetores oficiais da ONCI estão incorporados ao repositório e são a fonte de verdade para qualquer aplicação da marca.
 
-### Regras que já podem ser adotadas
+<table>
+  <tr>
+    <td align="center"><img src="../apps/docs/public/brand/logo.svg" alt="Logo oficial ONCI" width="300" /></td>
+    <td align="center"><img src="../apps/docs/public/brand/symbol.svg" alt="Símbolo oficial ONCI" width="120" /></td>
+    <td align="center"><img src="../apps/docs/public/brand/perfil.svg" alt="Aplicação de perfil oficial ONCI" width="120" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Logo principal</strong><br><code>logo.svg</code></td>
+    <td align="center"><strong>Símbolo</strong><br><code>symbol.svg</code></td>
+    <td align="center"><strong>Perfil</strong><br><code>perfil.svg</code></td>
+  </tr>
+</table>
 
-- preservar a grafia ONCI;
-- não distorcer, inclinar adicionalmente ou comprimir o logo;
-- não aplicar efeitos, sombras ou contornos sem uma versão oficial prevista;
-- priorizar versões de alto contraste;
-- não misturar o logo com grafismos que prejudiquem leitura.
+#### Logo principal — `logo.svg`
 
-### Pendências quando o vetor oficial entrar
+Assinatura completa da ONCI. É a versão prioritária para cabeçalhos, comunicação institucional e aplicações em que existe largura suficiente.
 
-- construção e proporção;
+#### Símbolo — `symbol.svg`
+
+Marca isolada para espaços compactos, ícones de produto e aplicações em que a assinatura completa não é necessária.
+
+#### Perfil — `perfil.svg`
+
+Aplicação quadrada preta com símbolo branco, indicada para avatar, perfil social, favicon e superfícies quadradas equivalentes.
+
+### Regras de uso
+
+- usar sempre os vetores oficiais; não redesenhar nem aproximar a marca por tipografia;
+- não distorcer, esticar, comprimir, inclinar adicionalmente ou alterar as proporções internas;
+- não aplicar efeitos, sombras, contornos, bevel, glow ou texturas não previstas;
+- priorizar aplicações de alto contraste;
+- não misturar o logo com grafismos que prejudiquem a leitura;
+- `logo.svg` é a assinatura prioritária; `symbol.svg` entra quando o espaço ou a função pedirem uma marca compacta; `perfil.svg` é a aplicação quadrada oficial.
+
+### Especificações ainda por definir
+
 - área de proteção;
-- tamanho mínimo;
-- versões positiva/negativa;
-- aplicação monocromática;
-- aplicação sobre fotografia;
-- símbolo isolado, se existir;
-- lockups com Desempenho, Equipes e Raízes.
+- tamanho mínimo / redução mínima;
+- versões cromáticas adicionais além dos vetores oficiais atuais;
+- regras formais de aplicação sobre fotografia;
+- lockups de ONCI Desempenho, ONCI Equipes e ONCI Raízes.
 
 ---
 
@@ -497,7 +524,7 @@ Os dois devem viver no mesmo repositório para que decisões de marca possam vir
 - `docs/brand-book.md` — estratégia e expressão da marca;
 - `packages/tokens` — valores reutilizáveis;
 - `apps/docs` — documentação visual;
-- `apps/docs/public/brand` — assets oficiais quando forem incorporados.
+- `apps/docs/public/brand` — assets oficiais da marca: logo, símbolo e perfil.
 
 ---
 
@@ -511,7 +538,7 @@ Toda nova decisão importante deve receber um status:
 
 ### Próximas decisões de marca
 
-1. Incorporar logo vetorial oficial e suas variações.
+1. Definir área de proteção, redução mínima, aplicações sobre fotografia e lockups das três frentes.
 2. Fechar propósito, missão e visão em redação final.
 3. Definir tagline institucional, se houver necessidade.
 4. Criar direção fotográfica com exemplos próprios.

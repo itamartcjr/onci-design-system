@@ -1,0 +1,46 @@
+name: Integrate Brand Book
+
+on:
+  push:
+    paths:
+      - scripts/integrate-brand-book.py
+      - .github/workflows/integrate-brand-book.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  integrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+
+      - name: Integrate Brand Book
+        run: python scripts/integrate-brand-book.py
+
+      - name: Install dependencies
+        run: npm install --package-lock=false
+
+      - name: Validate TypeScript
+        run: npm run check
+
+      - name: Commit integrated documentation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add apps/docs/src/App.tsx apps/docs/src/BrandBook.tsx README.md apps/docs/public/brand-book/index.html
+          if git diff --cached --quiet; then
+            echo "No integration changes to commit."
+            exit 0
+          fi
+          git commit -m "feat: integrate Brand Book into main documentation"
+          git push

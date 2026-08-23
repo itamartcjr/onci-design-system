@@ -1,0 +1,17 @@
+{
+  "name": "onci-design-system",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace @onci/docs",
+    "build": "npm run build --workspace @onci/docs",
+    "check": "npm run check --workspace @onci/docs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

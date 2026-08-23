@@ -1,0 +1,39 @@
+:root {
+  --onci-white: #FFFFFF;
+  --onci-black: #000000;
+  --onci-muted: #6B7280;
+  --onci-surface: #F5F5F5;
+  --onci-surface-dark: #1A1A1A;
+  --onci-border: #E5E7EB;
+  --onci-red: #D71920;
+  --onci-red-dark: #A80F15;
+  --onci-blue: #1255A6;
+  --onci-blue-dark: #0B3468;
+  --onci-yellow: #F2B705;
+  --onci-orange: #E86A17;
+  --onci-earth: #8C3B20;
+
+  --onci-color-base: var(--onci-white);
+  --onci-color-contrast: var(--onci-black);
+  --onci-color-muted: var(--onci-muted);
+  --onci-color-surface: var(--onci-surface);
+  --onci-color-surface-dark: var(--onci-surface-dark);
+  --onci-color-border: var(--onci-border);
+  --onci-color-red: var(--onci-red);
+  --onci-color-blue: var(--onci-blue);
+  --onci-color-yellow: var(--onci-yellow);
+  --onci-color-orange: var(--onci-orange);
+  --onci-color-earth: var(--onci-earth);
+
+  --onci-font-primary: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --onci-font-brand: '1797', 'Arial Black', sans-serif;
+  --onci-font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+
+  --onci-content: 1200px;
+  --onci-wide: 1400px;
+
+  --onci-motion-fast: 120ms;
+  --onci-motion-base: 180ms;
+  --onci-motion-slow: 320ms;
+  --onci-motion-ease: cubic-bezier(0.2, 0, 0, 1);
+}

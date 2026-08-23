@@ -1,9 +1,11 @@
 import { useMemo, useState } from 'react';
 import type { CSSProperties, ReactNode } from 'react';
 import { onciTokens } from '@onci/tokens';
+import BrandBook from './BrandBook';
 
 type ThemeName = 'base' | 'desempenho' | 'equipes' | 'raizes';
 type PageKey =
+  | 'brandBook'
   | 'overview'
   | 'principles'
   | 'colors'
@@ -22,6 +24,12 @@ type PageKey =
   | 'research';
 
 const pages: Array<{ group: string; items: Array<{ key: PageKey; label: string }> }> = [
+  {
+    group: 'Marca',
+    items: [
+      { key: 'brandBook', label: 'Brand Book' },
+    ],
+  },
   {
     group: 'Introdução',
     items: [
@@ -78,7 +86,7 @@ function Icon({ name, size = 18 }: { name: 'search' | 'menu' | 'copy' | 'arrow' 
 }
 
 function App() {
-  const [page, setPage] = useState<PageKey>('overview');
+  const [page, setPage] = useState<PageKey>('brandBook');
   const [theme, setTheme] = useState<ThemeName>('base');
   const [query, setQuery] = useState('');
   const [mobileNav, setMobileNav] = useState(false);
@@ -110,9 +118,9 @@ function App() {
     >
       <header className="topbar">
         <button className="mobile-menu" onClick={() => setMobileNav((v) => !v)} aria-label="Abrir navegação"><Icon name="menu" /></button>
-        <button className="brand-lockup" onClick={() => openPage('overview')}>
+        <button className="brand-lockup" onClick={() => openPage('brandBook')}>
           <span className="brand-word">ONCI</span>
-          <span className="brand-meta">Design System <b>v0.1</b></span>
+          <span className="brand-meta">Brand + Design System <b>v0.1</b></span>
         </button>
         <div className="theme-switcher" aria-label="Selecionar tema">
           {(Object.keys(themes) as ThemeName[]).map((key) => (
@@ -139,11 +147,12 @@ function App() {
         </nav>
         <div className="sidebar-foot">
           <span className="status-dot" />
-          Base sincronizada com wp-onci
+          Brand Book + Design System ONCI
         </div>
       </aside>
 
       <main className="content">
+        {page === 'brandBook' && <BrandBook />}
         {page === 'overview' && <Overview onNavigate={openPage} />}
         {page === 'principles' && <Principles />}
         {page === 'colors' && <Colors />}

@@ -2,12 +2,12 @@
 
 Documentação viva da linguagem visual **e da marca ONCI**.
 
-O repositório organiza tanto o **Brand Book** quanto o **Design System**, para que estratégia de marca, identidade, tokens, componentes e experiências digitais evoluam a partir da mesma fonte de verdade.
+O repositório organiza o **Brand Book** e o **Design System na mesma aplicação**, para que estratégia de marca, identidade, tokens, componentes e experiências digitais evoluam a partir da mesma fonte de verdade.
 
 ## Documentação publicada
 
-- **Design System:** `https://itamartcjr.github.io/onci-design-system/`
-- **Brand Book:** `https://itamartcjr.github.io/onci-design-system/brand-book/`
+- **Brand Book + Design System:** `https://itamartcjr.github.io/onci-design-system/`
+- O **Brand Book é o primeiro item do menu lateral** e também a tela inicial da documentação.
 
 O Brand Book também possui uma versão-fonte em Markdown em `docs/brand-book.md`, usada para revisão e versionamento das decisões estratégicas.
 
@@ -26,10 +26,9 @@ O Brand Book também possui uma versão-fonte em Markdown em `docs/brand-book.md
 onci-design-system/
 ├─ apps/
 │  └─ docs/
-│     ├─ src/                       # documentação visual do Design System
+│     ├─ src/                       # Brand Book + documentação visual do Design System
 │     └─ public/
-│        ├─ brand/                  # assets oficiais da marca
-│        └─ brand-book/             # Brand Book publicado no GitHub Pages
+│        └─ brand/                  # assets oficiais da marca
 ├─ packages/
 │  └─ tokens/                       # fonte de verdade dos design tokens
 ├─ docs/

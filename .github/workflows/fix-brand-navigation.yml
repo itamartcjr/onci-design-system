@@ -1,0 +1,48 @@
+name: Fix Brand Book Navigation
+
+on:
+  push:
+    paths:
+      - scripts/fix-brand-navigation.py
+      - .github/workflows/fix-brand-navigation.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 20
+
+      - name: Apply Brand Book navigation
+        run: python scripts/fix-brand-navigation.py
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Validate TypeScript
+        run: npm run check
+
+      - name: Build documentation
+        run: npm run build
+
+      - name: Remove temporary migration
+        run: git rm scripts/fix-brand-navigation.py .github/workflows/fix-brand-navigation.yml
+
+      - name: Commit final Brand Book navigation
+        run: |
+          git config user.name "Itamar TC Jr"
+          git config user.email "48915453+itamartcjr@users.noreply.github.com"
+          git add apps/docs/src/App.tsx apps/docs/src/BrandBook.tsx apps/docs/src/LogoGuide.tsx apps/docs/src/brand-assets.css
+          git commit -m "brand: add Brand Book sections to sidebar and publish official logo guide"
+          git push

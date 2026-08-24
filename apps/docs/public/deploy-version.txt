@@ -1,3 +1,3 @@
-ONCI Design System Pages deploy
-Requested: 2026-08-23 19:49 -03:00
-Purpose: force a fresh GitHub Pages artifact containing the current Brand Book, official ONCI logo showcase and complete logo usage guide.
+ONCI Marca e Sistema de Design — GitHub Pages
+Solicitado: 2026-08-24
+Objetivo: publicar a documentação tipográfica atualizada com 1797 como uma única família e Medium, Italic e Poster como variações internas.

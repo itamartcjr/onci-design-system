@@ -2,9 +2,6 @@ export type SystemPageKey =
   | 'intro-overview'
   | 'intro-principles'
   | 'intro-how-to-use'
-  | 'brand-overview'
-  | 'brand-logo'
-  | 'brand-applications'
   | 'foundation-colors'
   | 'foundation-typography'
   | 'foundation-spacing'
@@ -29,11 +26,9 @@ export type SystemPageKey =
   | 'pattern-carousel'
   | 'examples-fronts';
 
-export type PageKey = SystemPageKey | 'brandBook';
-
 export type NavigationGroup = {
   group: string;
-  items: Array<{ key: PageKey; label: string }>;
+  items: Array<{ key: SystemPageKey; label: string }>;
 };
 
 export const navigation: NavigationGroup[] = [
@@ -46,16 +41,7 @@ export const navigation: NavigationGroup[] = [
     ],
   },
   {
-    group: '01 — Marca',
-    items: [
-      { key: 'brand-overview', label: 'Marca ONCI' },
-      { key: 'brand-logo', label: 'Logo' },
-      { key: 'brand-applications', label: 'Aplicações' },
-      { key: 'brandBook', label: 'Brand Book completo' },
-    ],
-  },
-  {
-    group: '02 — Fundações',
+    group: '01 — Fundações',
     items: [
       { key: 'foundation-colors', label: 'Cores' },
       { key: 'foundation-typography', label: 'Tipografia' },
@@ -69,7 +55,7 @@ export const navigation: NavigationGroup[] = [
     ],
   },
   {
-    group: '03 — Tokens',
+    group: '02 — Tokens',
     items: [
       { key: 'tokens-primitive', label: 'Primitivos' },
       { key: 'tokens-semantic', label: 'Semânticos' },
@@ -77,7 +63,7 @@ export const navigation: NavigationGroup[] = [
     ],
   },
   {
-    group: '04 — Componentes',
+    group: '03 — Componentes',
     items: [
       { key: 'component-buttons', label: 'Botões' },
       { key: 'component-forms', label: 'Formulários' },
@@ -88,7 +74,7 @@ export const navigation: NavigationGroup[] = [
     ],
   },
   {
-    group: '05 — Padrões',
+    group: '04 — Padrões',
     items: [
       { key: 'pattern-header', label: 'Header e mega menu' },
       { key: 'pattern-plp', label: 'Listagem de produtos' },
@@ -97,12 +83,12 @@ export const navigation: NavigationGroup[] = [
     ],
   },
   {
-    group: '06 — Exemplos',
+    group: '05 — Exemplos',
     items: [
       { key: 'examples-fronts', label: 'Três frentes ONCI' },
     ],
   },
 ];
 
-export const pageLabel = (key: PageKey) =>
+export const pageLabel = (key: SystemPageKey) =>
   navigation.flatMap((group) => group.items).find((item) => item.key === key)?.label ?? 'ONCI Design System';

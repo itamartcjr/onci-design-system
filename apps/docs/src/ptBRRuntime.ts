@@ -21,6 +21,8 @@ const replacements: Array<[RegExp, string]> = [
   [/Language & Narrative/gi, 'Linguagem e Narrativa'],
   [/Visual Identity/gi, 'Identidade Visual'],
   [/AI & Governance/gi, 'IA e Governança'],
+  [/Exemplo real/gi, 'Aplicação'],
+  [/Informações técnicas/gi, 'Especificações'],
   [/Reduced motion/gi, 'Movimento reduzido'],
   [/Sale badge/gi, 'Selo de promoção'],
   [/Add to cart/gi, 'Adicionar ao carrinho'],
@@ -110,6 +112,15 @@ const translateTextNode = (node: Node) => {
   if (next !== current) node.nodeValue = next;
 };
 
+const removeStructuralReferences = (root: ParentNode = document) => {
+  root.querySelectorAll<HTMLAnchorElement>('a[href*="brand-and-design-system"], a[href*="99947Dmc328mSa2FmYj5fP"]')
+    .forEach((link) => {
+      const item = link.closest('.research-item, article, li');
+      if (item) item.remove();
+      else link.remove();
+    });
+};
+
 const translateTree = (root: Node) => {
   if (root.nodeType === Node.TEXT_NODE) {
     translateTextNode(root);
@@ -121,6 +132,7 @@ const translateTree = (root: Node) => {
     translateTextNode(node);
     node = walker.nextNode();
   }
+  if (root instanceof Element || root instanceof Document) removeStructuralReferences(root);
 };
 
 const observer = new MutationObserver((mutations) => {
@@ -132,3 +144,4 @@ const observer = new MutationObserver((mutations) => {
 
 observer.observe(document.documentElement, { childList: true, characterData: true, subtree: true });
 translateTree(document.body);
+removeStructuralReferences();

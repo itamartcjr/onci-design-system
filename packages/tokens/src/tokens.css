@@ -26,7 +26,14 @@
   --onci-color-earth: var(--onci-earth);
 
   --onci-font-primary: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --onci-font-brand: '1797', 'Arial Black', sans-serif;
+  --onci-font-1797: '1797', 'Arial Black', sans-serif;
+  --onci-font-brand: var(--onci-font-1797);
+  --onci-font-1797-medium-weight: 500;
+  --onci-font-1797-medium-style: normal;
+  --onci-font-1797-italic-weight: 500;
+  --onci-font-1797-italic-style: italic;
+  --onci-font-1797-poster-weight: 400;
+  --onci-font-1797-poster-style: normal;
   --onci-font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
 
   --onci-content: 1200px;

@@ -93,7 +93,7 @@ A documentação deve ser visual e ensinar o sistema por demonstrações, estado
 ## Identidade ONCI
 
 - **Interface:** Nunito Sans
-- **Marca:** 1797
+- **Marca:** 1797 — variações Medium, Italic e Poster
 - **Estrutura:** preto e branco
 - **Vermelho:** `#D71920`
 - **Azul:** `#1255A6`

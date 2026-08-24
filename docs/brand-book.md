@@ -242,19 +242,21 @@ Em interfaces funcionais, a maior parte da experiência deve permanecer neutra. 
 
 ### 1797 — Definido
 
-Fonte de marca e de alta energia.
+Família tipográfica de marca. A família é sempre apresentada como **1797**; Medium, Italic e Poster são variações internas, não famílias separadas.
 
-**Usos indicados:**
+#### Medium
 
-- wordmarks e assinaturas quando adequado;
-- títulos de campanha;
-- CTAs de alta expressão;
-- números e chamadas esportivas;
-- grandes mensagens editoriais.
+Peso `500`, estilo normal. Usar em textos curtos de marca, subtítulos e composições que precisam de presença com leitura estável.
 
-**Comportamento:** forte, itálico, preferencialmente em caixa alta nos momentos de marca.
+#### Italic
 
-A fonte 1797 é um ativo licenciado e não deve ser redistribuída publicamente pelo Design System.
+Peso `500`, estilo itálico. Usar em chamadas esportivas, ações e títulos em que movimento e energia façam parte da mensagem.
+
+#### Poster
+
+Peso `400`, estilo normal. Usar em títulos grandes, campanhas, números e composições editoriais de alto impacto.
+
+As três variações oficiais possuem cobertura de português, incluindo cedilha e acentuação. Os arquivos tipográficos são ativos da marca e não são redistribuídos publicamente pelo repositório.
 
 ### Nunito Sans — Definido
 

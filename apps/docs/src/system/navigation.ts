@@ -49,20 +49,20 @@ export const navigation: NavigationGroup[] = [
       { key: 'foundation-colors', label: 'Cores' },
       { key: 'foundation-typography', label: 'Tipografia' },
       { key: 'foundation-spacing', label: 'Espaçamento' },
-      { key: 'foundation-grid', label: 'Grid' },
-      { key: 'foundation-breakpoints', label: 'Breakpoints' },
-      { key: 'foundation-radius-borders', label: 'Radius e bordas' },
+      { key: 'foundation-grid', label: 'Grade' },
+      { key: 'foundation-breakpoints', label: 'Pontos de quebra' },
+      { key: 'foundation-radius-borders', label: 'Raios e bordas' },
       { key: 'foundation-elevation', label: 'Sombras e elevação' },
       { key: 'foundation-icons', label: 'Ícones' },
-      { key: 'foundation-motion', label: 'Motion' },
+      { key: 'foundation-motion', label: 'Movimento' },
     ],
   },
   {
-    group: '02 — Tokens',
+    group: '02 — Tokens de design',
     items: [
       { key: 'tokens-primitive', label: 'Primitivos' },
       { key: 'tokens-semantic', label: 'Semânticos' },
-      { key: 'tokens-component', label: 'Componentes' },
+      { key: 'tokens-component', label: 'De componentes' },
     ],
   },
   {
@@ -79,10 +79,10 @@ export const navigation: NavigationGroup[] = [
   {
     group: '04 — Padrões',
     items: [
-      { key: 'pattern-header', label: 'Header e mega menu' },
+      { key: 'pattern-header', label: 'Cabeçalho e menu expansível' },
       { key: 'pattern-plp', label: 'Listagem de produtos' },
       { key: 'pattern-pdp', label: 'Página de produto' },
-      { key: 'pattern-carousel', label: 'Carrossel e slides' },
+      { key: 'pattern-carousel', label: 'Carrossel e painéis' },
     ],
   },
   {
@@ -94,4 +94,4 @@ export const navigation: NavigationGroup[] = [
 ];
 
 export const pageLabel = (key: SystemPageKey) =>
-  navigation.flatMap((group) => group.items).find((item) => item.key === key)?.label ?? 'ONCI Design System';
+  navigation.flatMap((group) => group.items).find((item) => item.key === key)?.label ?? 'Sistema de Design ONCI';

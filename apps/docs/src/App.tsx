@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import BrandSystem, { type BrandSelection } from './BrandSystem';
 import DesignSystemView from './DesignSystemView';
 import { brandGroups, brandModuleById, brandModules } from './brand/brandData';
+import { campoEmPortugues, grupoEmPortugues, moduloEmPortugues } from './brand/ptBR';
 import { navigation, pageLabel, type SystemPageKey } from './system/navigation';
 import './app-shell-v03.css';
 
@@ -39,7 +40,7 @@ export default function App() {
       modules: brandModules.filter((module) => module.group === group.label).map((module) => ({
         ...module,
         visibleFields: q
-          ? module.fields.map((field, fieldIndex) => ({ field, fieldIndex })).filter(({ field }) => `${module.title} ${field.name} ${group.label}`.toLocaleLowerCase('pt-BR').includes(q))
+          ? module.fields.map((field, fieldIndex) => ({ field, fieldIndex })).filter(({ field }) => `${moduloEmPortugues(module.id, module.title)} ${campoEmPortugues(field.name)} ${grupoEmPortugues(group.label)}`.toLocaleLowerCase('pt-BR').includes(q))
           : module.fields.map((field, fieldIndex) => ({ field, fieldIndex })),
       })).filter((module) => !q || module.visibleFields.length > 0),
     })).filter((group) => group.modules.length > 0);
@@ -47,7 +48,7 @@ export default function App() {
 
   const currentBrandModule = brandSelection ? brandModuleById(brandSelection.moduleId) : null;
   const currentBrandField = currentBrandModule && brandSelection ? currentBrandModule.fields[brandSelection.fieldIndex] : null;
-  const currentTitle = area === 'brand' ? (currentBrandField?.name ?? 'Overview') : pageLabel(designPage);
+  const currentTitle = area === 'brand' ? (currentBrandField ? campoEmPortugues(currentBrandField.name) : 'Visão geral') : pageLabel(designPage);
 
   const switchArea = (next: Area) => {
     setArea(next);
@@ -78,35 +79,35 @@ export default function App() {
       <button className="mobile-menu" onClick={() => setMobileNav((value) => !value)} aria-label="Abrir navegação"><Icon name="menu"/></button>
       <button className="brand-lockup" onClick={() => area === 'brand' ? openBrand(null) : openDesign('intro-overview')}>
         <span className="brand-word">ONCI</span>
-        <span className="brand-meta">{area === 'brand' ? 'Brand' : 'Design System'} <b>v0.3</b></span>
+        <span className="brand-meta">{area === 'brand' ? 'Marca' : 'Sistema de Design'} <b>v0.3</b></span>
       </button>
-      <div className="ds-current-page"><span>{area === 'brand' ? 'Brand /' : 'Design System /'}</span><strong>{currentTitle}</strong></div>
+      <div className="ds-current-page"><span>{area === 'brand' ? 'Marca /' : 'Sistema de Design /'}</span><strong>{currentTitle}</strong></div>
       <div className="area-switch">
         <button type="button" onClick={() => switchArea(area === 'brand' ? 'design-system' : 'brand')}>
-          {area === 'brand' ? 'Design System' : 'Brand'} <span>↗</span>
+          {area === 'brand' ? 'Sistema de Design' : 'Marca'} <span>↗</span>
         </button>
       </div>
     </header>
 
     <aside className={`sidebar ${mobileNav ? 'is-open' : ''}`}>
-      <div className="search-box"><Icon name="search" size={16}/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={area === 'brand' ? 'Buscar na marca' : 'Buscar no Design System'} aria-label="Buscar na documentação"/><kbd>⌘ K</kbd></div>
+      <div className="search-box"><Icon name="search" size={16}/><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder={area === 'brand' ? 'Buscar na Marca' : 'Buscar no Sistema de Design'} aria-label="Buscar na documentação"/><kbd>⌘ K</kbd></div>
 
       {area === 'brand' ? <nav className="brand-side-nav">
-        <div className="brand-nav-home"><button className={!brandSelection ? 'active' : ''} onClick={() => openBrand(null)}><span>00</span><strong>Overview</strong></button></div>
+        <div className="brand-nav-home"><button className={!brandSelection ? 'active' : ''} onClick={() => openBrand(null)}><span>00</span><strong>Visão geral</strong></button></div>
         {filteredBrand.map((group) => {
           const groupOpen = Boolean(query.trim()) || openBrandGroup === group.label;
           return <div className={`brand-nav-group ${groupOpen ? 'open' : ''}`} key={group.label}>
             <button className="brand-nav-group-toggle" onClick={() => setOpenBrandGroup(groupOpen && !query.trim() ? '' : group.label)} aria-expanded={groupOpen}>
-              <span>{group.label}</span><Icon name="chevron" size={14}/>
+              <span>{grupoEmPortugues(group.label)}</span><Icon name="chevron" size={14}/>
             </button>
             {groupOpen && <div className="brand-nav-group-items">
               {group.modules.map((module) => {
                 const moduleOpen = Boolean(query.trim()) || openBrandModule === module.id || brandSelection?.moduleId === module.id;
                 return <div className={`brand-nav-module ${moduleOpen ? 'open' : ''}`} key={module.id}>
                   <button className={`brand-nav-module-toggle ${brandSelection?.moduleId === module.id ? 'active' : ''}`} onClick={() => setOpenBrandModule(moduleOpen && !query.trim() ? null : module.id)} aria-expanded={moduleOpen}>
-                    <span>{module.number}</span><strong>{module.title}</strong><Icon name="chevron" size={13}/>
+                    <span>{module.number}</span><strong>{moduloEmPortugues(module.id, module.title)}</strong><Icon name="chevron" size={13}/>
                   </button>
-                  {moduleOpen && <div className="brand-nav-fields">{module.visibleFields.map(({ field, fieldIndex }) => <button key={`${module.id}-${fieldIndex}`} className={brandSelection?.moduleId === module.id && brandSelection.fieldIndex === fieldIndex ? 'active' : ''} onClick={() => openBrand({ moduleId: module.id, fieldIndex })}><span>{module.number}.{String(fieldIndex + 1).padStart(2,'0')}</span><strong>{field.name}</strong></button>)}</div>}
+                  {moduleOpen && <div className="brand-nav-fields">{module.visibleFields.map(({ field, fieldIndex }) => <button key={`${module.id}-${fieldIndex}`} className={brandSelection?.moduleId === module.id && brandSelection.fieldIndex === fieldIndex ? 'active' : ''} onClick={() => openBrand({ moduleId: module.id, fieldIndex })}><span>{module.number}.{String(fieldIndex + 1).padStart(2,'0')}</span><strong>{campoEmPortugues(field.name)}</strong></button>)}</div>}
                 </div>;
               })}
             </div>}
@@ -119,7 +120,7 @@ export default function App() {
         </div>)}
       </nav>}
 
-      <div className="sidebar-foot"><span className="status-dot"/>{area === 'brand' ? 'Brand ONCI · decisões e governança' : 'Design System ONCI · interface e código'}</div>
+      <div className="sidebar-foot"><span className="status-dot"/>{area === 'brand' ? 'Marca ONCI · decisões e governança' : 'Sistema de Design ONCI · interface e código'}</div>
     </aside>
 
     <main className="content">

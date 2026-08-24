@@ -1,19 +1,21 @@
-# ONCI Design System
+# ONCI — Brand + Design System
 
 <p align="center">
   <img src="apps/docs/public/brand/logo.svg" alt="Logo oficial ONCI" width="280" />
 </p>
 
-Documentação viva da linguagem visual **e da marca ONCI**.
+Documentação viva da marca e do sistema de interface da ONCI.
 
-O repositório organiza o **Brand Book** e o **Design System na mesma aplicação**, para que estratégia de marca, identidade, tokens, componentes e experiências digitais evoluam a partir da mesma fonte de verdade.
+O projeto usa o `brand-and-design-system` como referência de **estrutura e metodologia**, nunca como referência estética. A identidade, conteúdo, comportamento, componentes e direção de arte continuam sendo definidos pela ONCI.
 
 ## Documentação publicada
 
-- **Brand Book + Design System:** `https://itamartcjr.github.io/onci-design-system/`
-- O **Brand Book é o primeiro item do menu lateral** e também a tela inicial da documentação.
+A aplicação possui duas áreas independentes dentro do mesmo projeto publicado:
 
-O Brand Book também possui uma versão-fonte em Markdown em `docs/brand-book.md`, usada para revisão e versionamento das decisões estratégicas.
+- **Brand** — estratégia, narrativa, identidade, experiência e governança;
+- **Design System** — foundations, tokens, components, patterns e exemplos de produto.
+
+URL do projeto: `https://itamartcjr.github.io/onci-design-system/`
 
 ## Stack
 
@@ -30,17 +32,88 @@ O Brand Book também possui uma versão-fonte em Markdown em `docs/brand-book.md
 onci-design-system/
 ├─ apps/
 │  └─ docs/
-│     ├─ src/                       # Brand Book + documentação visual do Design System
+│     ├─ src/
+│     │  ├─ BrandSystem.tsx         # área Brand
+│     │  ├─ DesignSystemView.tsx    # área Design System + tabs
+│     │  ├─ SystemDocs.tsx          # pranchas visuais de interface
+│     │  └─ brand/brandData.ts      # 20 módulos e decisões ONCI
 │     └─ public/
-│        └─ brand/                  # assets oficiais da marca
+│        └─ brand/                  # assets oficiais
 ├─ packages/
-│  └─ tokens/                       # fonte de verdade dos design tokens
+│  └─ tokens/                       # design tokens
 ├─ docs/
-│  ├─ brand-book.md                 # estratégia e expressão da marca ONCI
-│  ├─ adidas-benchmark.md           # pesquisa e decisões absorvidas como método
-│  └─ architecture.md               # arquitetura e integração futura
+│  ├─ brand-book.md                 # fonte estratégica anterior / apoio
+│  ├─ design-system-methodology.md  # regras de arquitetura documental
+│  ├─ adidas-benchmark.md
+│  └─ architecture.md
 └─ package.json
 ```
+
+## Brand
+
+Brand é separado do Design System.
+
+A arquitetura segue cinco grupos e vinte módulos:
+
+1. **Foundation** — Brand Core, Brand Strategy, Audience, Brand Personality;
+2. **Language & Narrative** — Verbal Identity, Messaging System, Brand Storytelling;
+3. **Visual Identity** — Visual Brand Identity, Typography, Photography Direction, Illustration, Iconography, Graphic Language, Layout Principles, Motion Identity;
+4. **Experience** — Sonic Identity, Brand Experience, Brand in Action;
+5. **AI & Governance** — AI Brand Guidelines, Brand Governance.
+
+Cada módulo possui seus próprios itens. As respostas ONCI são classificadas como **Definido**, **Proposta** ou **Pendente**. Um campo exigido pela estrutura não é preenchido artificialmente quando ainda não existe decisão suficiente.
+
+## Design System
+
+O Design System possui navegação própria:
+
+- 00 — Introdução;
+- 01 — Fundações;
+- 02 — Tokens;
+- 03 — Componentes;
+- 04 — Padrões;
+- 05 — Exemplos.
+
+Páginas detalhadas utilizam as abas:
+
+- **Overview**;
+- **Uso**;
+- **Tokens**;
+- **Código**;
+- **Referências**.
+
+Páginas introdutórias podem usar fluxo editorial contínuo quando abas não adicionarem clareza.
+
+## Princípio editorial
+
+**Primeiro mostrar → depois explicar → depois especificar.**
+
+A documentação deve ser visual e ensinar o sistema por demonstrações, estados, medidas, responsividade, tokens, código e exemplos reais da ONCI.
+
+## Identidade ONCI
+
+- **Interface:** Nunito Sans
+- **Marca:** 1797
+- **Estrutura:** preto e branco
+- **Vermelho:** `#D71920`
+- **Azul:** `#1255A6`
+- **Amarelo:** `#F2B705`
+- **Laranja:** `#E86A17`
+- **Terra:** `#8C3B20`
+- **Conteúdo:** 1200px
+- **Wide:** 1400px
+- **Botões:** geometria reta, 1797, itálico e caixa alta quando usados como ação de marca
+
+O projeto não redistribui arquivos binários da fonte 1797.
+
+## Fontes de verdade
+
+1. Brand: `docs/brand-book.md` + `apps/docs/src/brand/brandData.ts`;
+2. ativos oficiais: `apps/docs/public/brand/`;
+3. tokens: `packages/tokens/src/tokens.json`;
+4. tema WordPress: `wp-onci/themes/onci/theme.json`;
+5. comportamento real: `wp-onci/plugins/onci-core/blocks/src/`;
+6. documentação visual: `apps/docs/src/SystemDocs.tsx`.
 
 ## Rodar
 
@@ -56,72 +129,10 @@ npm run check
 npm run build
 ```
 
-## Brand Book
+## Regra de evolução
 
-O Brand Book documenta:
+Se uma decisão visual aparece repetidamente, avaliar se deve virar token, componente ou padrão.
 
-- origem e significado do nome ONCI;
-- propósito, missão, visão e ambição;
-- posicionamento;
-- ONCI Desempenho, ONCI Equipes e ONCI Raízes;
-- públicos e personalidade;
-- voz e tom;
-- paleta e tipografia;
-- logo, símbolo e aplicação de perfil oficiais;
-- direção fotográfica e linguagem gráfica;
-- esporte de base, patrocínios e comunidade;
-- regras de uso e governança da marca.
+Se algo existe uma única vez e não possui motivo de reutilização, não transformar automaticamente em sistema.
 
-As decisões são classificadas como **Definido**, **Proposta** ou **Pendente** para evitar que uma formulação editorial ainda em discussão seja tratada automaticamente como regra final de marca.
-
-## Identidade ONCI preservada
-
-A base inicial foi sincronizada com as decisões existentes no `wp-onci`:
-
-- **Interface:** Nunito Sans
-- **Marca:** 1797
-- **Estrutura:** preto e branco
-- **Vermelho ONCI:** `#D71920`
-- **Azul ONCI:** `#1255A6`
-- **Amarelo ONCI:** `#F2B705`
-- **Laranja ONCI:** `#E86A17`
-- **Terra ONCI:** `#8C3B20`
-- **Conteúdo:** 1200px
-- **Wide:** 1400px
-- **Botões:** cantos retos, 1797, itálico, caixa alta
-
-### Fontes e marca oficial
-
-Este repositório **não redistribui os arquivos binários da fonte 1797**. A aplicação referencia o nome da família e usa fallback durante o desenvolvimento. Em produção, a fonte deverá ser carregada a partir do asset oficial/licenciado da ONCI.
-
-Os assets vetoriais oficiais da ONCI estão em `apps/docs/public/brand/` e são usados diretamente pela documentação:
-
-- `logo.svg` — assinatura principal;
-- `symbol.svg` — símbolo isolado;
-- `perfil.svg` — aplicação quadrada para perfil/avatar e favicon.
-
-O Brand Book já usa esses arquivos oficiais. Permanecem como decisões futuras apenas as especificações que os vetores, sozinhos, não determinam: área de proteção, redução mínima, versões cromáticas adicionais e lockups formais de ONCI Desempenho, ONCI Equipes e ONCI Raízes.
-
-## Referência Adidas
-
-O sistema parte da **arquitetura e disciplina** observadas no Adidas Design Language e no YARN Design System: fundamentos separados de componentes, tokens, theming, grid, iconografia, estados, responsividade e documentação por exemplos.
-
-Não copiamos logos, Três Listras, fontes, assets, fotografia, nomes proprietários ou identidade de marca da adidas.
-
-## Relação Brand Book × Design System
-
-O **Brand Book** responde quem a ONCI é e como deve se expressar.
-
-O **Design System** responde como essa expressão vira interface: tokens, componentes, estados, grids, motion, padrões de produto e acessibilidade.
-
-Uma decisão de marca deve poder chegar ao produto digital sem ser reinterpretada em cada projeto.
-
-## Próximas saídas dos tokens
-
-A fonte de verdade é `packages/tokens/src/tokens.json`. A arquitetura foi preparada para gerar, em etapas futuras:
-
-1. CSS Custom Properties para web;
-2. objetos TypeScript para React e React Native;
-3. presets/tema para componentes;
-4. `theme.json` para WordPress;
-5. JSON compatível com Figma Tokens / Tokens Studio, se desejado.
+A referência organiza **como documentamos**. A ONCI determina **como a marca parece, fala, se move e funciona**.

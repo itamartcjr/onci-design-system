@@ -17,34 +17,34 @@ const documentFlowPages = new Set<SystemPageKey>(['intro-overview','intro-princi
 
 const usageByArea = (page: SystemPageKey) => {
   if (page.startsWith('foundation-')) return {
-    use: 'Use esta fundação sempre que uma decisão visual equivalente aparecer em mais de um componente, padrão ou plataforma.',
-    avoid: 'Não crie uma segunda escala local para resolver um caso isolado. Antes, verifique se o valor existente já cobre a necessidade.',
-    responsive: 'A fundação deve declarar o que permanece e o que muda entre computador, tablet e celular. Responsividade é comportamento, não miniaturização.',
-    accessibility: 'Contraste, legibilidade, foco, movimento reduzido e tamanho de alvo fazem parte da regra, não são uma camada posterior.',
+    use: 'Aplicar esta fundação em decisões recorrentes de interface, componentes e padrões que compartilham a mesma função visual.',
+    avoid: 'Evitar escalas ou valores locais paralelos quando um token existente já representa a mesma decisão.',
+    responsive: 'Declarar o que permanece e o que muda entre computador, tablet e celular. Mudanças de comportamento têm prioridade sobre simples redução de tamanho.',
+    accessibility: 'Preservar contraste, legibilidade, foco, movimento reduzido e tamanho de alvo em todos os contextos.',
   };
   if (page.startsWith('component-')) return {
-    use: 'Use o componente quando a ação ou informação tiver a mesma função semântica já documentada. Preserve anatomia, estados e hierarquia.',
-    avoid: 'Não duplique um componente só para mudar cor, margem ou conteúdo. Prefira variante ou token quando a diferença for recorrente.',
+    use: 'Aplicar o componente quando a ação ou informação tiver a mesma função semântica documentada, preservando anatomia, hierarquia e estados.',
+    avoid: 'Evitar duplicações criadas apenas para alterar cor, margem ou conteúdo. Diferenças recorrentes devem ser tratadas por variantes ou tokens.',
     responsive: 'O componente pode mudar de largura, distribuição, densidade ou interação no celular sem perder função e acessibilidade.',
-    accessibility: 'Estados de foco, teclado, desabilitado, carregamento, mensagens e alvo de toque devem continuar perceptíveis e operáveis.',
+    accessibility: 'Foco, teclado, estados desabilitado e carregando, mensagens e alvo de toque devem permanecer perceptíveis e operáveis.',
   };
   if (page.startsWith('pattern-')) return {
-    use: 'Use o padrão para combinar componentes em um fluxo recorrente da loja, mantendo a lógica de compra e navegação previsível.',
-    avoid: 'Não trate o padrão como uma captura rígida. Conteúdo, quantidade de itens e ponto de quebra podem mudar sem destruir sua estrutura.',
-    responsive: 'Documente explicitamente a reorganização entre computador, tablet e celular, inclusive quando a interação muda de natureza.',
-    accessibility: 'A ordem visual deve continuar coerente com a estrutura do documento, foco, leitura assistiva e mensagens de estado.',
+    use: 'Aplicar este padrão nos fluxos recorrentes da loja que combinam vários componentes com a mesma hierarquia e objetivo.',
+    avoid: 'Evitar tratar a composição como uma captura rígida. Conteúdo, quantidade de itens e ponto de quebra podem variar sem perder a estrutura.',
+    responsive: 'Reorganizar explicitamente a composição entre computador, tablet e celular quando a interação mudar.',
+    accessibility: 'A ordem visual deve acompanhar a ordem de leitura, foco e navegação assistiva.',
   };
   if (page.startsWith('tokens-')) return {
-    use: 'Use tokens para dar nome e intenção a decisões reutilizáveis e conectar marca, código e plataformas.',
-    avoid: 'Não crie um token para cada valor isolado. Um token precisa representar uma decisão reutilizável ou uma relação estável.',
-    responsive: 'Tokens podem apontar para valores diferentes por contexto quando a mudança de comportamento for parte do sistema.',
-    accessibility: 'Tokens semânticos de foco, texto, retorno de estado e movimento reduzido ajudam a tornar a acessibilidade consistente entre componentes.',
+    use: 'Usar tokens para nomear decisões reutilizáveis e conectar a mesma intenção entre plataformas e componentes.',
+    avoid: 'Evitar tokenizar valores isolados sem significado recorrente ou relação estável no sistema.',
+    responsive: 'Tokens podem apontar para valores diferentes por contexto quando a mudança fizer parte do comportamento do sistema.',
+    accessibility: 'Tokens semânticos de foco, texto, retorno e movimento reduzido devem ser compartilhados entre componentes.',
   };
   return {
-    use: 'Use esta página como exemplo aplicado do sistema ONCI, validando se a composição pode ser explicada pelos fundamentos e componentes existentes.',
-    avoid: 'Não copie a composição como modelo universal quando o contexto de conteúdo ou produto pedir outra solução.',
-    responsive: 'A expressão visual pode mudar por frente e tamanho de tela, preservando hierarquia, contraste e função.',
-    accessibility: 'Toda aplicação final precisa manter foco, leitura, contraste e comportamento de interação documentados.',
+    use: 'Aplicar a composição quando os fundamentos, componentes e padrões documentados corresponderem ao contexto da tela.',
+    avoid: 'Evitar transformar um exemplo específico em modelo universal quando conteúdo ou produto pedirem outra solução.',
+    responsive: 'Preservar hierarquia, contraste e função quando a composição mudar entre tamanhos de tela.',
+    accessibility: 'Manter foco, leitura, contraste e comportamento de interação definidos pelo sistema.',
   };
 };
 
@@ -62,10 +62,10 @@ const codeByPage: Partial<Record<SystemPageKey, string>> = {
 function UsagePanel({ page }: { page: SystemPageKey }) {
   const usage = usageByArea(page);
   return <section className="ds-tab-supplement">
-    <div className="ds-tab-panel-head"><small>Uso</small><h2>Como aplicar {pageLabel(page)} sem quebrar o sistema.</h2></div>
+    <div className="ds-tab-panel-head"><small>Uso</small><h2>{pageLabel(page)}</h2></div>
     <div className="ds-usage-grid">
-      <article><span>01</span><strong>Quando usar</strong><p>{usage.use}</p></article>
-      <article><span>02</span><strong>Evite</strong><p>{usage.avoid}</p></article>
+      <article><span>01</span><strong>Aplicar</strong><p>{usage.use}</p></article>
+      <article><span>02</span><strong>Evitar</strong><p>{usage.avoid}</p></article>
       <article><span>03</span><strong>Responsividade</strong><p>{usage.responsive}</p></article>
       <article><span>04</span><strong>Acessibilidade</strong><p>{usage.accessibility}</p></article>
     </div>
@@ -73,9 +73,9 @@ function UsagePanel({ page }: { page: SystemPageKey }) {
 }
 
 function CodePanel({ page }: { page: SystemPageKey }) {
-  const code = codeByPage[page] ?? `import { onciTokens } from '@onci/tokens';\n\n// Use tokens semânticos primeiro.\n// Crie valor local somente quando a decisão não for reutilizável.\n\nconst exemplo = {\n  color: onciTokens.semantic.color.text.primary,\n  spacing: onciTokens.spacing.md,\n};`;
+  const code = codeByPage[page] ?? `import { onciTokens } from '@onci/tokens';\n\nconst example = {\n  color: onciTokens.semantic.color.text.primary,\n  spacing: onciTokens.spacing.md,\n};`;
   return <section className="ds-tab-supplement">
-    <div className="ds-tab-panel-head"><small>Código</small><h2>A documentação visual precisa chegar à implementação.</h2><p>Trecho de referência. O código real do componente continua sendo a fonte de verdade quando já existe no produto.</p></div>
+    <div className="ds-tab-panel-head"><small>Código</small><h2>Implementação</h2></div>
     <div className="ds-code-board"><div className="ds-code-meta"><span>ONCI / {pageLabel(page)}</span><b>CSS / TS</b></div><pre><code>{code}</code></pre></div>
   </section>;
 }

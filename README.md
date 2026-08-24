@@ -1,4 +1,4 @@
-# ONCI — Brand + Design System
+# ONCI — Marca e Sistema de Design
 
 <p align="center">
   <img src="apps/docs/public/brand/logo.svg" alt="Logo oficial ONCI" width="280" />
@@ -6,21 +6,21 @@
 
 Documentação viva da marca e do sistema de interface da ONCI.
 
-O projeto usa o `brand-and-design-system` como referência de **estrutura e metodologia**, nunca como referência estética. A identidade, conteúdo, comportamento, componentes e direção de arte continuam sendo definidos pela ONCI.
+O projeto usa o `brand-and-design-system` como referência de **estrutura e metodologia**, nunca como referência estética. A identidade, o conteúdo, o comportamento, os componentes e a direção de arte continuam sendo definidos pela ONCI.
 
 ## Documentação publicada
 
 A aplicação possui duas áreas independentes dentro do mesmo projeto publicado:
 
-- **Brand** — estratégia, narrativa, identidade, experiência e governança;
-- **Design System** — foundations, tokens, components, patterns e exemplos de produto.
+- **Marca** — estratégia, narrativa, identidade, experiência e governança;
+- **Sistema de Design** — fundações, tokens, componentes, padrões e exemplos de produto.
 
 URL do projeto: `https://itamartcjr.github.io/onci-design-system/`
 
-## Stack
+## Tecnologias
 
 - Node.js 20+
-- npm workspaces
+- espaços de trabalho do npm
 - React 19
 - TypeScript
 - Vite
@@ -33,14 +33,14 @@ onci-design-system/
 ├─ apps/
 │  └─ docs/
 │     ├─ src/
-│     │  ├─ BrandSystem.tsx         # área Brand
-│     │  ├─ DesignSystemView.tsx    # área Design System + tabs
+│     │  ├─ BrandSystem.tsx         # área de Marca
+│     │  ├─ DesignSystemView.tsx    # área do Sistema de Design + abas
 │     │  ├─ SystemDocs.tsx          # pranchas visuais de interface
 │     │  └─ brand/brandData.ts      # 20 módulos e decisões ONCI
 │     └─ public/
-│        └─ brand/                  # assets oficiais
+│        └─ brand/                  # ativos oficiais
 ├─ packages/
-│  └─ tokens/                       # design tokens
+│  └─ tokens/                       # tokens de design
 ├─ docs/
 │  ├─ brand-book.md                 # fonte estratégica anterior / apoio
 │  ├─ design-system-methodology.md  # regras de arquitetura documental
@@ -49,34 +49,34 @@ onci-design-system/
 └─ package.json
 ```
 
-## Brand
+## Marca
 
-Brand é separado do Design System.
+A área de Marca é separada do Sistema de Design.
 
 A arquitetura segue cinco grupos e vinte módulos:
 
-1. **Foundation** — Brand Core, Brand Strategy, Audience, Brand Personality;
-2. **Language & Narrative** — Verbal Identity, Messaging System, Brand Storytelling;
-3. **Visual Identity** — Visual Brand Identity, Typography, Photography Direction, Illustration, Iconography, Graphic Language, Layout Principles, Motion Identity;
-4. **Experience** — Sonic Identity, Brand Experience, Brand in Action;
-5. **AI & Governance** — AI Brand Guidelines, Brand Governance.
+1. **Fundamentos** — Núcleo da marca, Estratégia de marca, Públicos e Personalidade da marca;
+2. **Linguagem e Narrativa** — Identidade verbal, Sistema de mensagens e Narrativa da marca;
+3. **Identidade Visual** — Identidade visual da marca, Tipografia, Direção fotográfica, Ilustração, Iconografia, Linguagem gráfica, Princípios de composição e Identidade de movimento;
+4. **Experiência** — Identidade sonora, Experiência da marca e Marca em ação;
+5. **IA e Governança** — Diretrizes de IA para a marca e Governança da marca.
 
 Cada módulo possui seus próprios itens. As respostas ONCI são classificadas como **Definido**, **Proposta** ou **Pendente**. Um campo exigido pela estrutura não é preenchido artificialmente quando ainda não existe decisão suficiente.
 
-## Design System
+## Sistema de Design
 
-O Design System possui navegação própria:
+O Sistema de Design possui navegação própria:
 
 - 00 — Introdução;
 - 01 — Fundações;
-- 02 — Tokens;
+- 02 — Tokens de design;
 - 03 — Componentes;
 - 04 — Padrões;
 - 05 — Exemplos.
 
 Páginas detalhadas utilizam as abas:
 
-- **Overview**;
+- **Visão geral**;
 - **Uso**;
 - **Tokens**;
 - **Código**;
@@ -101,28 +101,28 @@ A documentação deve ser visual e ensinar o sistema por demonstrações, estado
 - **Laranja:** `#E86A17`
 - **Terra:** `#8C3B20`
 - **Conteúdo:** 1200px
-- **Wide:** 1400px
+- **Largura ampla:** 1400px
 - **Botões:** geometria reta, 1797, itálico e caixa alta quando usados como ação de marca
 
 O projeto não redistribui arquivos binários da fonte 1797.
 
 ## Fontes de verdade
 
-1. Brand: `docs/brand-book.md` + `apps/docs/src/brand/brandData.ts`;
+1. Marca: `docs/brand-book.md` + `apps/docs/src/brand/brandData.ts`;
 2. ativos oficiais: `apps/docs/public/brand/`;
 3. tokens: `packages/tokens/src/tokens.json`;
 4. tema WordPress: `wp-onci/themes/onci/theme.json`;
 5. comportamento real: `wp-onci/plugins/onci-core/blocks/src/`;
 6. documentação visual: `apps/docs/src/SystemDocs.tsx`.
 
-## Rodar
+## Executar
 
 ```bash
 npm install
 npm run dev
 ```
 
-Build e validação:
+Compilação e validação:
 
 ```bash
 npm run check

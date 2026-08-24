@@ -103,7 +103,7 @@ const shouldSkip = (node: Node) => {
   return !parent || Boolean(parent.closest('code, pre, kbd, script, style'));
 };
 
-const translate = (value: string) => replacements.reduce((text, [pattern, replacement]) => text.replace(pattern, replacement), value);
+const translate = (value: string) => replacements.reduce((text, [pattern, replacement]) => text.replace(pattern, replacement), value.normalize('NFC'));
 
 const translateTextNode = (node: Node) => {
   if (shouldSkip(node)) return;

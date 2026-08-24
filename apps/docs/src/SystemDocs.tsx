@@ -100,7 +100,7 @@ const specs: Record<SystemPageKey, Spec> = {
       { token: 'heading.weight', value: '800', usage: 'Headings do tema', status: 'extraido' },
       { token: 'heading.lineHeight', value: '1.05', usage: 'Headings do tema', status: 'extraido' },
       { token: 'heading.letterSpacing', value: '-0.02em', usage: 'Headings do tema', status: 'extraido' },
-      { token: 'button.font', value: '1797 / 900 / italic / uppercase', usage: 'Ação de alto impacto', status: 'extraido' },
+      { token: 'button.font', value: '1797 / 500 / italic / uppercase', usage: 'Ação de alto impacto', status: 'extraido' },
     ], refs: [themeRef]
   },
   'foundation-spacing': {
@@ -211,7 +211,7 @@ const specs: Record<SystemPageKey, Spec> = {
   'component-buttons': {
     eyebrow: '04 — Componentes', title: 'Botões', description: 'Ações de alta clareza com geometria reta, tipografia de marca e suporte a SVG por currentColor.',
     purpose: 'Criar hierarquia inequívoca para ações sem perder energia ONCI. O mesmo contrato deve funcionar no Gutenberg, e-commerce e futuras interfaces React Native.', kind: 'buttons', variants: ['Primary', 'Secondary', 'Tertiary', 'Icon', 'Hover', 'Focus', 'Active', 'Loading', 'Disabled', 'Com SVG'], tech: [
-      { token: 'button.font', value: '1797 / 900 / italic / uppercase', usage: 'Ação principal', status: 'extraido' },
+      { token: 'button.font', value: '1797 / 500 / italic / uppercase', usage: 'Ação principal', status: 'extraido' },
       { token: 'button.padding.x', value: '24px', usage: '1.5rem no theme.json', status: 'extraido' },
       { token: 'button.padding.y', value: '12px', usage: '.75rem no theme.json', status: 'extraido' },
       { token: 'button.radius', value: '0', usage: 'Botão core', status: 'extraido' },

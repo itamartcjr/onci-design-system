@@ -209,7 +209,7 @@ export const campoEmPortugues = (name: string) => fieldLabels[name] ?? name;
 export const moduloEmPortugues = (id: string, fallback: string) => moduleLabels[id] ?? fallback;
 export const grupoEmPortugues = (group: string) => groupLabels[group] ?? group;
 
-export const textoEmPortugues = (value: string) => value
+export const textoEmPortugues = (value: string) => value.normalize('NFC')
   .replaceAll('Brand Book', 'Manual da Marca')
   .replaceAll('Design System', 'Sistema de Design')
   .replaceAll('masterbrand', 'marca-mãe')

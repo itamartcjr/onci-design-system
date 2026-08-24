@@ -1,27 +1,3 @@
-@font-face {
-  font-family: 'ONCI 1797';
-  src: local('1797 POSTER Portugues');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'ONCI 1797';
-  src: local('1797 MEDIUM Portugues');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'ONCI 1797';
-  src: local('1797 ITALIC_V2 Portugues');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
 :root {
   --onci-white: #FFFFFF;
   --onci-black: #000000;
@@ -50,7 +26,7 @@
   --onci-color-earth: var(--onci-earth);
 
   --onci-font-primary: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --onci-font-1797: 'ONCI 1797', 'Arial Black', sans-serif;
+  --onci-font-1797: '1797', 'Arial Black', sans-serif;
   --onci-font-brand: var(--onci-font-1797);
   --onci-font-1797-medium-weight: 500;
   --onci-font-1797-medium-style: normal;

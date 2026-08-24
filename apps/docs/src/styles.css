@@ -1,4 +1,5 @@
 @import '@onci/tokens/tokens.css';
+@import './fonts.css';
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -12,7 +13,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .app { --topbar-h: 64px; --sidebar-w: 272px; min-height: 100vh; background: #fff; }
 .topbar { position: fixed; z-index: 50; top: 0; left: 0; right: 0; height: var(--topbar-h); display: flex; align-items: stretch; border-bottom: 1px solid #e5e7eb; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); }
 .brand-lockup { width: var(--sidebar-w); flex: 0 0 var(--sidebar-w); display: flex; align-items: center; gap: 14px; border: 0; border-right: 1px solid #e5e7eb; background: #fff; padding: 0 20px; cursor: pointer; text-align: left; }
-.brand-word { font-family: var(--onci-font-brand); font-style: italic; font-weight: 900; font-size: 28px; letter-spacing: .01em; line-height: 1; }
+.brand-word { font-family: var(--onci-font-brand); font-style: italic; font-weight: 500; font-size: 28px; letter-spacing: .01em; line-height: 1; }
 .brand-meta { color: #6b7280; font-size: 12px; line-height: 1.1; display: flex; flex-direction: column; gap: 3px; }
 .brand-meta b { color: #000; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; }
 .theme-switcher { margin-left: auto; display: flex; align-items: center; gap: 4px; padding: 0 20px; overflow-x: auto; }
@@ -104,7 +105,7 @@ button:focus-visible, input:focus-visible, select:focus-visible, a:focus-visible
 .type-table strong { font-size: 12px; }
 .type-table code, .type-table span { color: #6b7280; font-size: 11px; }
 .type-table .sample { color: #000; white-space: nowrap; line-height: 1; font-family: var(--onci-font-primary); font-weight: 800; }
-.sample-display { font-family: var(--onci-font-brand)!important; font-style: italic; font-size: 64px; font-weight: 900!important; }
+.sample-display { font-family: var(--onci-font-brand)!important; font-style: italic; font-size: 64px; font-weight: 500!important; }
 .sample-h1 { font-size: 48px; } .sample-h2 { font-size: 36px; } .sample-h3 { font-size: 24px; } .sample-body-l { font-size: 18px; font-weight: 400!important; } .sample-body { font-size: 16px; font-weight: 400!important; } .sample-small { font-size: 14px; font-weight: 600!important; } .sample-label { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
 
 .layout-demo { background: #f5f5f5; padding: 36px; overflow: hidden; }

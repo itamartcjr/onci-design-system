@@ -82,7 +82,7 @@ const decisions: Record<string, Decision> = {
   'typography:Display Typeface': { decision: '1797 Poster. Usar em títulos grandes, números, campanhas e composições editoriais de alto impacto.', status: 'definido' },
   'typography:Supporting Typeface': { decision: '1797 Medium. Usar em textos curtos de marca, subtítulos e composições que precisam de presença com leitura estável.', status: 'definido' },
   'typography:Função tipográfica': { decision: '1797 Italic. Usar em chamadas esportivas, ações e títulos em que movimento e energia façam parte da mensagem.', status: 'definido' },
-  'typography:Licenciamento e fontes oficiais': { decision: 'A fonte 1797 é um ativo licenciado da marca e não deve ser redistribuída pela documentação.', status: 'definido' },
+  'typography:Licenciamento e fontes oficiais': { decision: 'A família 1797 é carregada pela documentação a partir dos arquivos oficiais 1797_MEDIUM.ttf, 1797_ITALIC.ttf e 1797_POSTER.ttf mantidos em apps/docs/public.', status: 'definido' },
   'photography:Subjects': { decision: 'Atletas, equipes, produto, treino, jogo, deslocamento e contexto esportivo real.', status: 'proposta' },
   'photography:Authenticity': { decision: 'Priorizar movimento verdadeiro, produto visível e contexto real. Evitar stock genérico de fitness e pose sem ação.', status: 'definido' },
   "photography:This isn't us": { decision: 'Fitness genérico, brasilidade estereotipada, pose publicitária vazia e imagem que esconde o produto.', status: 'definido' },

@@ -256,7 +256,7 @@ Peso `500`, estilo itálico. Usar em chamadas esportivas, ações e títulos em 
 
 Peso `400`, estilo normal. Usar em títulos grandes, campanhas, números e composições editoriais de alto impacto.
 
-As três variações oficiais possuem cobertura de português, incluindo cedilha e acentuação. Os arquivos tipográficos são ativos da marca e não são redistribuídos publicamente pelo repositório.
+As três variações oficiais possuem cobertura de português, incluindo cedilha e acentuação. Os arquivos usados pela documentação estão em `apps/docs/public/1797_MEDIUM.ttf`, `apps/docs/public/1797_ITALIC.ttf` e `apps/docs/public/1797_POSTER.ttf`.
 
 ### Nunito Sans — Definido
 

@@ -1,108 +1,113 @@
-# ONCI Design System — metodologia de documentação
+# ONCI — Brand + Design System
 
 ## Regra central
 
 O projeto `brand-and-design-system` é referência de **arquitetura de documentação**, não de identidade visual.
 
-A ONCI reutiliza a inteligência estrutural:
+A ONCI reutiliza a inteligência estrutural da referência e mantém 100% da própria identidade, conteúdo, movimento, componentes e linguagem.
 
-- navegação por grupos e páginas pequenas;
-- cada assunto como uma prancha visual independente;
-- mostrar antes de explicar;
-- explicar antes de especificar;
-- exemplos reais antes de tabelas técnicas;
-- tokens conectando decisão visual e código;
-- components abaixo de foundations/tokens;
-- patterns acima de components e abaixo de telas finais.
+## Duas áreas independentes
 
-A ONCI não reutiliza cores, tipografia, componentes estilizados, motion, imagens ou linguagem visual do projeto de referência.
+### Brand
 
-## Ordem obrigatória de uma página
+Brand não é uma seção do Design System.
 
-1. Título.
-2. Descrição curta.
-3. Para que serve.
-4. Exemplo real e visual.
-5. Variações e estados relevantes.
-6. Informações técnicas, preferindo nomes de token.
-7. Referências.
+A área Brand possui navegação, hierarquia e governança próprias. Ela segue a mesma lógica de grupos e módulos do projeto de referência:
 
-O princípio editorial é: **primeiro mostrar → depois explicar → depois especificar**.
+1. Foundation — módulos 01 a 04.
+2. Language & Narrative — módulos 05 a 07.
+3. Visual Identity — módulos 08 a 15.
+4. Experience — módulos 16 a 18.
+5. AI & Governance — módulos 19 e 20.
 
-## Fontes de verdade da ONCI
+Cada módulo abre seus próprios campos. Um campo precisa registrar definição, objetivo, perguntas de validação, decisão ONCI, status, forma de apresentação e fonte interna.
 
-1. Marca e Brand Book: `docs/brand-book.md` + SVGs oficiais em `apps/docs/public/brand/`.
-2. Tokens: `packages/tokens/src/tokens.json`.
-3. Tema WordPress: `wp-onci/themes/onci/theme.json`.
-4. Comportamento real de componentes: `wp-onci/plugins/onci-core/blocks/src/`.
-5. Documentação visual: `apps/docs/src/SystemDocs.tsx`.
+Status de Brand:
 
-## Status dos valores
+- **Definido** — decisão consolidada e utilizável.
+- **Proposta** — direção formulada, ainda sujeita a validação/aprovação.
+- **Pendente** — a estrutura exige a decisão, mas ainda não existe informação ONCI suficiente para fechá-la.
 
-- **definido** — decisão consolidada de marca/sistema.
-- **extraído** — valor encontrado em implementação real e documentado como padrão existente.
-- **operacional** — normalização proposta para organizar o sistema; precisa ser validada por uso real antes de virar regra definitiva.
+Nunca preencher um item de Brand apenas para completar documentação.
 
-## Arquitetura atual
+## Design System
 
-### 00 — Introdução
+O Design System é técnico e separado da área Brand.
 
-Visão geral, princípios e como usar.
+Sua navegação atual é:
 
-### 01 — Marca
+- 00 — Introdução;
+- 01 — Fundações;
+- 02 — Tokens;
+- 03 — Componentes;
+- 04 — Padrões;
+- 05 — Exemplos.
 
-Marca ONCI, logo, aplicações e Brand Book completo.
+Páginas detalhadas usam abas, seguindo a lógica do projeto de referência:
 
-### 02 — Fundações
+1. **Overview** — descrição, finalidade, demonstração visual, variações e estados.
+2. **Uso** — quando usar, quando evitar, responsividade e acessibilidade.
+3. **Tokens** — valores e nomes que controlam o padrão.
+4. **Código** — ligação entre documentação e implementação.
+5. **Referências** — fontes internas e técnicas usadas para validar a decisão.
 
-Cores, tipografia, espaçamento, grid, breakpoints, radius/bordas, elevação, ícones e motion.
+Páginas introdutórias podem permanecer em fluxo editorial contínuo quando abas não melhorarem a compreensão.
 
-### 03 — Tokens
+## Princípio editorial
 
-Primitivos → Semânticos → Componentes.
+**Primeiro mostrar → depois explicar → depois especificar.**
 
-### 04 — Componentes
+A documentação não deve parecer Storybook padrão, dashboard SaaS ou lista automática de componentes. Ela também é uma expressão da ONCI.
 
-Somente componentes já utilizados ou claramente necessários na ONCI. A primeira leva documenta botões, formulários, navegação, produto, galeria e filtros.
+## Fontes de verdade
 
-### 05 — Padrões
+1. Brand: `docs/brand-book.md` e `apps/docs/src/brand/brandData.ts`.
+2. Ativos oficiais: `apps/docs/public/brand/`.
+3. Tokens: `packages/tokens/src/tokens.json`.
+4. Tema WordPress: `wp-onci/themes/onci/theme.json`.
+5. Comportamento real: `wp-onci/plugins/onci-core/blocks/src/`.
+6. Design System visual: `apps/docs/src/SystemDocs.tsx`.
 
-Combinações recorrentes: header/mega menu, PLP, PDP e carrossel/slides.
+## Tokens e status técnico
 
-### 06 — Exemplos
+No Design System:
 
-Demonstra a mesma estrutura assumindo Desempenho, Equipes e Raízes.
+- **definido** — valor consolidado no sistema atual;
+- **extraído** — valor encontrado em implementação real e documentado;
+- **operacional** — normalização usada para organizar o sistema, ainda sujeita a consolidação.
 
-## O que ainda não vira página
-
-Templates genéricos, dashboards, pricing, tabelas, avatares, tooltips e outros componentes do projeto de referência não entram automaticamente. Eles só devem ser adicionados quando a ONCI tiver uso real que justifique documentação e reutilização.
+A arquitetura preferida é Primitive → Semantic → Component.
 
 ## Responsividade
 
-A documentação deve mostrar mudança de comportamento. Os breakpoints atuais são extraídos do código e ainda não formam uma única escala universal:
+Responsividade documenta mudança de comportamento, não redução do desktop.
+
+Breakpoints reais encontrados no produto atual:
 
 - 767px — galeria e slides;
 - 782px — filtros / contexto WordPress;
 - 1024px — galeria tablet;
 - 1180px — compactação do mega menu.
 
-Uma futura consolidação deve acontecer por migração consciente, não por renomear valores que já possuem comportamento diferente.
+Uma futura consolidação deve acontecer por migração consciente.
 
 ## Motion
 
-Valores encontrados no produto atual:
+Valores encontrados na implementação atual:
 
 - 120ms — painel do mega menu;
 - 140ms — indicador de navegação;
-- 160ms — controles como plus/accordion;
+- 160ms — controles/accordion;
 - 220ms — drawers e navegação mobile;
-- 320ms — zoom/hover de mídia;
+- 320ms — mídia/zoom;
 - 400ms — slides de campanha.
 
-Componentes principais já possuem tratamento para `prefers-reduced-motion`; esse comportamento é obrigatório em novas implementações com movimento.
+`prefers-reduced-motion` é obrigatório em novas implementações com movimento.
 
 ## Regra de evolução
 
-Se uma decisão aparece repetidamente, ela deve ser avaliada para virar token, componente ou padrão.
+Se uma decisão aparece repetidamente, avaliar se deve virar token, componente ou padrão.
 
-Se aparece uma única vez e não existe razão para reutilização, ela continua sendo uma decisão local.
+Se existe uma única vez e não há motivo de reutilização, continua sendo decisão local.
+
+A arquitetura da referência organiza a documentação. A ONCI determina como tudo parece, se move, fala e se comporta.

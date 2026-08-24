@@ -103,15 +103,22 @@ const shouldSkip = (node: Node) => {
 
 const translate = (value: string) => replacements.reduce((text, [pattern, replacement]) => text.replace(pattern, replacement), value);
 
+const translateTextNode = (node: Node) => {
+  if (shouldSkip(node)) return;
+  const current = node.nodeValue ?? '';
+  const next = translate(current);
+  if (next !== current) node.nodeValue = next;
+};
+
 const translateTree = (root: Node) => {
   if (root.nodeType === Node.TEXT_NODE) {
-    if (!shouldSkip(root)) root.nodeValue = translate(root.nodeValue ?? '');
+    translateTextNode(root);
     return;
   }
   const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
   let node = walker.nextNode();
   while (node) {
-    if (!shouldSkip(node)) node.nodeValue = translate(node.nodeValue ?? '');
+    translateTextNode(node);
     node = walker.nextNode();
   }
 };

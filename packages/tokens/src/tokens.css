@@ -39,6 +39,14 @@
   --onci-content: 1200px;
   --onci-wide: 1400px;
 
+  --onci-field-height: 44px;
+  --onci-field-padding-x: 12px;
+  --onci-field-label-gap: 4px;
+  --onci-form-field-gap: 8px;
+  --onci-form-group-gap: 10px;
+  --onci-form-section-gap: 20px;
+  --onci-form-section-padding: 14px;
+
   --onci-motion-fast: 120ms;
   --onci-motion-base: 180ms;
   --onci-motion-slow: 320ms;
